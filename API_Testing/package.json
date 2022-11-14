@@ -8,5 +8,8 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "@junchan/type-check": "github:besquare-2022-premier/type-check#1.0.3"
   }
 }
