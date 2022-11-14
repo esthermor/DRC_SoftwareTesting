@@ -24,13 +24,13 @@ Open & Verify Kaching.one
 
 Homepage
     Click Element    ${startButton}
-
-Login to kaching.one
-    Click Button    ${loginButton}  
-    Press Keys    None    ESC        
-
+    
 Switch Currency
     Click Element    ${currencySwitcher}
+    FOR    ${currency}    IN    @{currencyList}
+    Page Should Contain Element    //*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']
+    END
+
     Click Element    ${MYR}
     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    10
     Page Should Contain Element    //p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'RM')]
@@ -59,7 +59,13 @@ Switch Currency
     Click Element    ${CAD}
     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    10
     Page Should Contain Element    //p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]
-   
+
+    Reload Page
+    Page Should Contain Element    //p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]
+
+Login to kaching.one
+    Click Button    ${loginButton}  
+    Press Keys    None    ESC        
 
 
 
