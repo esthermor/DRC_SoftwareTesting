@@ -1,293 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221114 15:48:38.741" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221114 17:38:17.153" rpa="false" schemaversion="3">
 <suite id="s1" name="Homepage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/homePage/homepage.robot">
 <test id="s1-t1" name="Open &amp; Verify Kaching.one" line="20">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://stocgeex.xyz</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221114 15:48:38.861" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
-<status status="PASS" starttime="20221114 15:48:38.861" endtime="20221114 15:48:40.304"/>
+<msg timestamp="20221114 17:38:17.288" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
+<status status="PASS" starttime="20221114 17:38:17.288" endtime="20221114 17:38:18.959"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221114 15:48:40.304" endtime="20221114 15:48:40.411"/>
+<status status="PASS" starttime="20221114 17:38:18.960" endtime="20221114 17:38:19.065"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${letsStartButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:40.413" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
-<status status="PASS" starttime="20221114 15:48:40.411" endtime="20221114 15:48:40.604"/>
+<msg timestamp="20221114 17:38:19.066" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.065" endtime="20221114 17:38:19.229"/>
 </kw>
-<status status="PASS" starttime="20221114 15:48:38.860" endtime="20221114 15:48:40.605"/>
+<status status="PASS" starttime="20221114 17:38:17.287" endtime="20221114 17:38:19.229"/>
 </test>
 <test id="s1-t2" name="Homepage" line="25">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${startButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:40.608" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Get Started!")]'.</msg>
-<status status="PASS" starttime="20221114 15:48:40.607" endtime="20221114 15:48:41.069"/>
+<msg timestamp="20221114 17:38:19.231" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Get Started!")]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.230" endtime="20221114 17:38:19.334"/>
 </kw>
-<status status="PASS" starttime="20221114 15:48:40.606" endtime="20221114 15:48:41.070"/>
+<status status="PASS" starttime="20221114 17:38:19.230" endtime="20221114 17:38:19.334"/>
 </test>
-<test id="s1-t3" name="Switch Currency" line="28">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${currencySwitcher}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:41.079" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
-<status status="PASS" starttime="20221114 15:48:41.078" endtime="20221114 15:48:41.687"/>
-</kw>
-<for flavor="IN">
-<var>${currency}</var>
-<value>@{currencyList}</value>
-<iter>
-<var name="${currency}">MYR</var>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:41.759" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='MYR']'.</msg>
-<status status="PASS" starttime="20221114 15:48:41.688" endtime="20221114 15:48:41.760"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:41.687" endtime="20221114 15:48:41.760"/>
-</iter>
-<iter>
-<var name="${currency}">EUR</var>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:41.819" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='EUR']'.</msg>
-<status status="PASS" starttime="20221114 15:48:41.760" endtime="20221114 15:48:41.819"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:41.760" endtime="20221114 15:48:41.819"/>
-</iter>
-<iter>
-<var name="${currency}">JPY</var>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:41.881" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='JPY']'.</msg>
-<status status="PASS" starttime="20221114 15:48:41.820" endtime="20221114 15:48:41.881"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:41.819" endtime="20221114 15:48:41.881"/>
-</iter>
-<iter>
-<var name="${currency}">GBP</var>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:41.945" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='GBP']'.</msg>
-<status status="PASS" starttime="20221114 15:48:41.881" endtime="20221114 15:48:41.946"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:41.881" endtime="20221114 15:48:41.946"/>
-</iter>
-<iter>
-<var name="${currency}">AUD</var>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:42.014" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='AUD']'.</msg>
-<status status="PASS" starttime="20221114 15:48:41.946" endtime="20221114 15:48:42.014"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:41.946" endtime="20221114 15:48:42.014"/>
-</iter>
-<iter>
-<var name="${currency}">CAD</var>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:42.152" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='CAD']'.</msg>
-<status status="PASS" starttime="20221114 15:48:42.015" endtime="20221114 15:48:42.152"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:42.015" endtime="20221114 15:48:42.152"/>
-</iter>
-<status status="PASS" starttime="20221114 15:48:41.687" endtime="20221114 15:48:42.152"/>
-</for>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${MYR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:42.153" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='MYR']'.</msg>
-<status status="PASS" starttime="20221114 15:48:42.153" endtime="20221114 15:48:43.709"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiCircularProgress-svg"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" starttime="20221114 15:48:43.710" endtime="20221114 15:48:44.455"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'RM')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:44.589" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'RM')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:44.455" endtime="20221114 15:48:44.589"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${currencySwitcher}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:44.590" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
-<status status="PASS" starttime="20221114 15:48:44.589" endtime="20221114 15:48:45.106"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${EUR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:45.107" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='EUR']'.</msg>
-<status status="PASS" starttime="20221114 15:48:45.107" endtime="20221114 15:48:46.701"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiCircularProgress-svg"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" starttime="20221114 15:48:46.701" endtime="20221114 15:48:47.465"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'€')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:47.815" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'€')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:47.466" endtime="20221114 15:48:47.815"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${currencySwitcher}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:47.815" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
-<status status="PASS" starttime="20221114 15:48:47.815" endtime="20221114 15:48:48.132"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${JPY}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:48.132" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='JPY']'.</msg>
-<status status="PASS" starttime="20221114 15:48:48.132" endtime="20221114 15:48:50.286"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiCircularProgress-svg"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" starttime="20221114 15:48:50.287" endtime="20221114 15:48:50.417"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'¥')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:50.514" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'¥')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:50.418" endtime="20221114 15:48:50.514"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${currencySwitcher}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:50.515" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
-<status status="PASS" starttime="20221114 15:48:50.514" endtime="20221114 15:48:50.975"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${GBP}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:50.976" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='GBP']'.</msg>
-<status status="PASS" starttime="20221114 15:48:50.975" endtime="20221114 15:48:52.602"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiCircularProgress-svg"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" starttime="20221114 15:48:52.602" endtime="20221114 15:48:52.744"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'£')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:52.877" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'£')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:52.745" endtime="20221114 15:48:52.877"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${currencySwitcher}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:52.878" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
-<status status="PASS" starttime="20221114 15:48:52.877" endtime="20221114 15:48:53.383"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${AUD}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:53.384" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='AUD']'.</msg>
-<status status="PASS" starttime="20221114 15:48:53.383" endtime="20221114 15:48:54.720"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiCircularProgress-svg"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" starttime="20221114 15:48:54.720" endtime="20221114 15:48:54.868"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:55.013" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:54.869" endtime="20221114 15:48:55.013"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${currencySwitcher}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:55.014" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
-<status status="PASS" starttime="20221114 15:48:55.013" endtime="20221114 15:48:55.388"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CAD}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:55.389" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='CAD']'.</msg>
-<status status="PASS" starttime="20221114 15:48:55.389" endtime="20221114 15:48:56.264"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiCircularProgress-svg"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" starttime="20221114 15:48:56.264" endtime="20221114 15:48:56.363"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:56.453" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:56.364" endtime="20221114 15:48:56.454"/>
-</kw>
-<kw name="Reload Page" library="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20221114 15:48:56.454" endtime="20221114 15:48:56.676"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221114 15:48:56.787" level="INFO">Current page contains element '//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]'.</msg>
-<status status="PASS" starttime="20221114 15:48:56.676" endtime="20221114 15:48:56.788"/>
-</kw>
-<status status="PASS" starttime="20221114 15:48:41.071" endtime="20221114 15:48:56.788"/>
-</test>
-<test id="s1-t4" name="Login to kaching.one" line="67">
+<test id="s1-t3" name="Sign Up User" line="66">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${loginButton}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221114 15:48:56.791" level="INFO">Clicking button '//*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and contains(text(),"Login")]'.</msg>
-<status status="PASS" starttime="20221114 15:48:56.790" endtime="20221114 15:48:56.935"/>
+<msg timestamp="20221114 17:38:19.336" level="INFO">Clicking button '//*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and contains(text(),"Login")]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.336" endtime="20221114 17:38:19.498"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>None</arg>
-<arg>ESC</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20221114 15:48:56.936" level="INFO">Sending key(s) ('ESC',) to page.</msg>
-<msg timestamp="20221114 15:48:56.936" level="INFO">Pressing special key ESCAPE to browser.</msg>
-<msg timestamp="20221114 15:48:56.936" level="INFO">Releasing special key ESCAPE.</msg>
-<status status="PASS" starttime="20221114 15:48:56.935" endtime="20221114 15:48:56.994"/>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221114 17:38:19.499" endtime="20221114 17:38:19.515"/>
 </kw>
-<status status="PASS" starttime="20221114 15:48:56.789" endtime="20221114 15:48:56.994"/>
-</test>
-<test id="s1-t5" name="Close" line="73">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221114 15:48:56.995" endtime="20221114 15:48:57.057"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth css-251er" and contains(text(),"Sign Up")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:19.516" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth css-251er" and contains(text(),"Sign Up")]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.516" endtime="20221114 17:38:19.598"/>
 </kw>
-<status status="PASS" starttime="20221114 15:48:56.995" endtime="20221114 15:48:57.057"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@type="username"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:19.599" level="INFO">Clicking element '//*[@type="username"]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.599" endtime="20221114 17:38:19.675"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@type="username"]</arg>
+<arg>Tester</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:19.675" level="INFO">Typing text 'Tester' into text field '//*[@type="username"]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.675" endtime="20221114 17:38:19.783"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@type="email"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:19.783" level="INFO">Clicking element '//*[@type="email"]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.783" endtime="20221114 17:38:19.860"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@type="email"]</arg>
+<arg>Testing_123@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:19.861" level="INFO">Typing text 'Testing_123@gmail.com' into text field '//*[@type="email"]'.</msg>
+<status status="PASS" starttime="20221114 17:38:19.861" endtime="20221114 17:38:20.021"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:20.021" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]'.</msg>
+<status status="PASS" starttime="20221114 17:38:20.021" endtime="20221114 17:38:20.080"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221114 17:38:25.080" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221114 17:38:20.080" endtime="20221114 17:38:25.081"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]</arg>
+<arg>Testing@123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221114 17:38:25.081" level="INFO">Typing password into text field '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]'.</msg>
+<msg timestamp="20221114 17:38:25.322" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221114 17:38:25.324" level="FAIL">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x5590c89bb2c3 &lt;unknown&gt;
+#1 0x5590c87c4700 &lt;unknown&gt;
+#2 0x5590c87f4c7b &lt;unknown&gt;
+#3 0x5590c881bf42 &lt;unknown&gt;
+#4 0x5590c87f2073 &lt;unknown&gt;
+#5 0x5590c881c0ae &lt;unknown&gt;
+#6 0x5590c8833a50 &lt;unknown&gt;
+#7 0x5590c881bd63 &lt;unknown&gt;
+#8 0x5590c87f07e3 &lt;unknown&gt;
+#9 0x5590c87f1a21 &lt;unknown&gt;
+#10 0x5590c8a0918e &lt;unknown&gt;
+#11 0x5590c8a0c622 &lt;unknown&gt;
+#12 0x5590c89efaae &lt;unknown&gt;
+#13 0x5590c8a0d2a3 &lt;unknown&gt;
+#14 0x5590c89e3ecf &lt;unknown&gt;
+#15 0x5590c8a2d588 &lt;unknown&gt;
+#16 0x5590c8a2d706 &lt;unknown&gt;
+#17 0x5590c8a478b2 &lt;unknown&gt;
+#18 0x7f6cf1aa5609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221114 17:38:25.081" endtime="20221114 17:38:25.325"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 17:38:25.326" endtime="20221114 17:38:25.326"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]</arg>
+<arg>Testing@123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 17:38:25.327" endtime="20221114 17:38:25.327"/>
+</kw>
+<status status="FAIL" starttime="20221114 17:38:19.335" endtime="20221114 17:38:25.328">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x5590c89bb2c3 &lt;unknown&gt;
+#1 0x5590c87c4700 &lt;unknown&gt;
+#2 0x5590c87f4c7b &lt;unknown&gt;
+#3 0x5590c881bf42 &lt;unknown&gt;
+#4 0x5590c87f2073 &lt;unknown&gt;
+#5 0x5590c881c0ae &lt;unknown&gt;
+#6 0x5590c8833a50 &lt;unknown&gt;
+#7 0x5590c881bd63 &lt;unknown&gt;
+#8 0x5590c87f07e3 &lt;unknown&gt;
+#9 0x5590c87f1a21 &lt;unknown&gt;
+#10 0x5590c8a0918e &lt;unknown&gt;
+#11 0x5590c8a0c622 &lt;unknown&gt;
+#12 0x5590c89efaae &lt;unknown&gt;
+#13 0x5590c8a0d2a3 &lt;unknown&gt;
+#14 0x5590c89e3ecf &lt;unknown&gt;
+#15 0x5590c8a2d588 &lt;unknown&gt;
+#16 0x5590c8a2d706 &lt;unknown&gt;
+#17 0x5590c8a478b2 &lt;unknown&gt;
+#18 0x7f6cf1aa5609 &lt;unknown&gt;
+</status>
 </test>
 <doc>DRCtestcases</doc>
-<status status="PASS" starttime="20221114 15:48:38.742" endtime="20221114 15:48:57.060"/>
+<status status="FAIL" starttime="20221114 17:38:17.153" endtime="20221114 17:38:25.329"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="Homepage">Homepage</stat>
+<stat pass="2" fail="1" skip="0" id="s1" name="Homepage">Homepage</stat>
 </suite>
 </statistics>
 <errors>

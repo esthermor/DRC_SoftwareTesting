@@ -63,9 +63,33 @@ Switch Currency
     Reload Page
     Page Should Contain Element    //p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]
 
+Sign Up User
+    Click Button    ${loginButton}
+    Wait Until Page Contains Element    //*[@class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"]    10
+    Click Element    //*[@class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth css-251er" and contains(text(),"Sign Up")]
+     
+    # Enter email
+    Click Element    //*[@type="username"]
+    Input Text    //*[@type="username"]    Tester
+
+    # Enter password
+    Click Element    //*[@type="email"]    
+    Input Text    //*[@type="email"]    Testing_123@gmail.com
+
+    # Enter Password
+    Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]  
+    Input Password    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]    Testing@123
+    
+    #Enter Confirm Password
+    Click Element    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]   
+    Input Password    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]    Testing@123
+     
+
 Login to kaching.one
     Click Button    ${loginButton}  
-    Press Keys    None    ESC        
+    Input Text    //*[@class="jss268" and span="Enter Email"]//parent::fieldset    Testing_123@gmail.com      
+    # Press Keys    None    ESC        
+    
 
 
 
