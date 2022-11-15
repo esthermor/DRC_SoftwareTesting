@@ -31,14 +31,20 @@ ${signUpSuccess}    //*[@class="MuiPaper-root MuiAlert-root MuiAlert-filledSucce
 ${signUpSignInGoogle}    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and text()="Sign In With Google"]
 
 ${loginButton}    //*[@class="MuiButton-label" and text()="Login"]
-${loginSuccess}    //*[@class="MuiAlert-message" and text()="Welcome back testing_123@gmail.com"]
-${loginSignInGoogle}
+${loginSuccess}    //*[@class="MuiAlert-message"]
+${loginSignInGoogle}    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and text()="Sign In With Google"]
+${loginLink}    //p[text()="Already have an account?"]//*[@style="cursor: pointer;"]
+${signUpLink}    //p[text()="Don't have an account?"]//*[@style="cursor: pointer;"]
+
+${coinsHeader}    //*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"]//div[text()="Coins"]
 
 *** Test Cases ***
 Open & Verify Kaching.one
     Open Browser    https://stocgeex.xyz    chrome
     Maximize Browser Window
     Click Element    ${letsStartButton}
+    Reload Page
+    Page Should Contain Element    ${startButton}
 
 Homepage
     Click Element    ${startButton}
@@ -92,7 +98,7 @@ Sign Up User
 
     # Enter email
     Click Element    ${emailSignUpTextfield}    
-    Input Text    ${emailSignUpTextfield}    Testingabc123@gmail.com
+    Input Text    ${emailSignUpTextfield}    Esther@gmail.com
 
     # Enter Password
     Click Element    ${passwordSignUpTextfield}
@@ -109,29 +115,43 @@ Sign Up User
 
     # Sign In with Google
     Click Button     ${signUpSignInGoogle}
-
-    Click Element    ${loginTab}
+    
+    # Login Link
+    Click Element    ${loginLink}
+    Page Should Contain Element    //h1[text()="Welcome Back"]
 
 Login to kaching.one
     # Enter email
-    # Click Button    ${loginHeaderButton}
+    Click Button    ${loginHeaderButton}
     Click Element    ${emailLoginTextfield}
-    Input Text    ${emailLoginTextfield}    Testing_123@gmail.com
+    Input Text    ${emailLoginTextfield}    Esther@gmail.com
 
     # Enter password
     Click Element    ${passwordLoginTextfield}
-    Input Text    ${passwordLoginTextfield}    testing@123
+    Input Text    ${passwordLoginTextfield}    Testing@123
 
     # Login button
     Wait Until Element Is Enabled    ${loginButton}    10
     Click Element    ${loginButton}
-    Wait Until Page Contains Element    //*[@class="MuiAlert-message" and text()="Welcome back testing_123@gmail.com"]    10
-    Page Should Contain Element    //*[@class="MuiAlert-message" and text()="Welcome back testing_123@gmail.com"]
+    Wait Until Page Contains Element    /${loginSuccess}    10
+    Page Should Contain Element    ${loginSuccess}
 
     # Sign In with Google
-    Click Button    ${loginSignInGoogle}    
+    Click Button    ${loginSignInGoogle}  
+
+    #Sign Up Link
+    Click Element      ${signUpLink}
+    Page Should Contain Element    //h1[text()=" Create Account"]
 
     # Press Keys    None    ESC        
-    
+
+# Popular Coins
+#     Set Focus To Element    //*[@class="jss63"]//*[@class="MuiTypography-root MuiTypography-h6" and text()="Dogecoin"]
+#     Click Element    //*[@class="jss63"]//*[@class="MuiTypography-root MuiTypography-h6" and text()="Dogecoin"]
+   
+Navigation to Coin Page 
+    Click Element    ${coinsHeader}
+    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]
+
 Close 
     Close Browser
