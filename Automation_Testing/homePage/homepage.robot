@@ -5,7 +5,7 @@ Documentation    DRCtestcases
 *** Variables ***
 ${letsStartButton}   //*[@class="MuiButton-label" and contains(text(),"Let's Start!")] 
 ${startButton}    //*[@class="MuiButton-label" and contains(text(),"Get Started!")]
-${loginButton}    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and contains(text(),"Login")]    
+${loginHeaderButton}    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and contains(text(),"Login")]    
 ${currencySwitcher}    //*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']
 ${MYR}    //*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='MYR']
 ${EUR}    //*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='EUR']
@@ -15,6 +15,24 @@ ${AUD}    //*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMe
 ${CAD}    //*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='CAD']
 @{currencyList}=    MYR    EUR    JPY    GBP    AUD    CAD
 @{currencies}=    RM    €    ¥    £    $    $
+
+${loginBox}    //*[@class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"]
+${signUpTab}    //*[@class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth css-251er" and contains(text(),"Sign Up")]
+${loginTab}    //*[@class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth css-251er" and text()="Login"]
+${usernameTextfield}    //*[@type="username"]
+${emailSignUpTextfield}    //*[@type="email"]
+${passwordSignUpTextfield}    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]
+${confirmSignUpTextfield}    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]
+${emailLoginTextfield}    //*[@type="email"]
+${passwordLoginTextfield}    //*[@type="password"]
+
+${signUpButton}    //*[@class="MuiButton-label" and text()="Sign Up"]
+${signUpSuccess}    //*[@class="MuiPaper-root MuiAlert-root MuiAlert-filledSuccess MuiPaper-elevation10"]
+${signUpSignInGoogle}    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hw9j7s" and text()="Sign In With Google"]
+
+${loginButton}    //*[@class="MuiButton-label" and text()="Login"]
+${loginSuccess}    //*[@class="MuiAlert-message" and text()="Welcome back testing_123@gmail.com"]
+${loginSignInGoogle}
 
 *** Test Cases ***
 Open & Verify Kaching.one
@@ -64,34 +82,56 @@ Switch Currency
     Page Should Contain Element    //p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]
 
 Sign Up User
-    Click Button    ${loginButton}
-    Wait Until Page Contains Element    //*[@class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"]    10
-    Click Element    //*[@class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth css-251er" and contains(text(),"Sign Up")]
+    Click Button    ${loginHeaderButton}
+    Wait Until Page Contains Element    ${loginBox}    10
+    Click Element    ${signUpTab}
      
-    # Enter email
-    Click Element    //*[@type="username"]
-    Input Text    //*[@type="username"]    Tester
+    # Enter username
+    Click Element    ${usernameTextfield}
+    Input Text    ${usernameTextfield}    Tester
 
-    # Enter password
-    Click Element    //*[@type="email"]    
-    Input Text    //*[@type="email"]    Testing_123@gmail.com
+    # Enter email
+    Click Element    ${emailSignUpTextfield}    
+    Input Text    ${emailSignUpTextfield}    Testingabc123@gmail.com
 
     # Enter Password
-    Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]  
-    Input Password    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="Enter Password"]    Testing@123
+    Click Element    ${passwordSignUpTextfield}
+    Press Keys    ${passwordSignUpTextfield}    Testing@123
     
-    #Enter Confirm Password
-    Click Element    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]   
-    Input Password    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth" and label="Confirm Password"]    Testing@123
+    # Enter Confirm Password
+    Click Element    ${confirmSignUpTextfield}   
+    Press Keys    ${confirmSignUpTextfield}    Testing@123
      
+    # Sign Up button
+    Click Element    ${signUpButton}
+    Wait Until Page Contains Element    ${signUpSuccess}    10
+    Page Should Contain Element    ${signUpSuccess}
+
+    # Sign In with Google
+    Click Button     ${signUpSignInGoogle}
+
+    Click Element    ${loginTab}
 
 Login to kaching.one
-    Click Button    ${loginButton}  
-    Input Text    //*[@class="jss268" and span="Enter Email"]//parent::fieldset    Testing_123@gmail.com      
+    # Enter email
+    # Click Button    ${loginHeaderButton}
+    Click Element    ${emailLoginTextfield}
+    Input Text    ${emailLoginTextfield}    Testing_123@gmail.com
+
+    # Enter password
+    Click Element    ${passwordLoginTextfield}
+    Input Text    ${passwordLoginTextfield}    testing@123
+
+    # Login button
+    Wait Until Element Is Enabled    ${loginButton}    10
+    Click Element    ${loginButton}
+    Wait Until Page Contains Element    //*[@class="MuiAlert-message" and text()="Welcome back testing_123@gmail.com"]    10
+    Page Should Contain Element    //*[@class="MuiAlert-message" and text()="Welcome back testing_123@gmail.com"]
+
+    # Sign In with Google
+    Click Button    ${loginSignInGoogle}    
+
     # Press Keys    None    ESC        
     
-
-
-
 Close 
     Close Browser
