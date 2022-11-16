@@ -1,162 +1,837 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221116 10:35:21.434" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221116 16:49:48.028" rpa="false" schemaversion="3">
 <suite id="s1" name="Coinlistpage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/coinListPage/coinlistpage.robot">
-<test id="s1-t1" name="Open &amp; Verify Kaching.one" line="13">
+<test id="s1-t1" name="Open &amp; Verify Kaching.one" line="28">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://stocgeex.xyz</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221116 10:35:21.580" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
-<status status="PASS" starttime="20221116 10:35:21.580" endtime="20221116 10:35:22.835"/>
+<msg timestamp="20221116 16:49:48.184" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
+<status status="PASS" starttime="20221116 16:49:48.184" endtime="20221116 16:49:50.120"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221116 10:35:22.835" endtime="20221116 10:35:22.940"/>
+<status status="PASS" starttime="20221116 16:49:50.121" endtime="20221116 16:49:50.238"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${letsStartButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:22.941" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
-<status status="PASS" starttime="20221116 10:35:22.940" endtime="20221116 10:35:23.128"/>
+<msg timestamp="20221116 16:49:50.240" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
+<status status="PASS" starttime="20221116 16:49:50.239" endtime="20221116 16:49:50.439"/>
 </kw>
-<status status="PASS" starttime="20221116 10:35:21.579" endtime="20221116 10:35:23.129"/>
+<status status="PASS" starttime="20221116 16:49:48.183" endtime="20221116 16:49:50.439"/>
 </test>
-<test id="s1-t2" name="Navigation to Coin Page" line="18">
+<test id="s1-t2" name="Navigation to Coin Page" line="33">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${coinsHeader}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:23.131" level="INFO">Clicking element '//*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"]//div[text()="Coins"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:23.131" endtime="20221116 10:35:23.362"/>
+<msg timestamp="20221116 16:49:50.442" level="INFO">Clicking element '//*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"]//div[text()="Coins"]'.</msg>
+<status status="PASS" starttime="20221116 16:49:50.441" endtime="20221116 16:49:51.778"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>//*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221116 10:35:23.862" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:23.362" endtime="20221116 10:35:23.862"/>
+<msg timestamp="20221116 16:49:51.817" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]'.</msg>
+<status status="PASS" starttime="20221116 16:49:51.778" endtime="20221116 16:49:51.817"/>
 </kw>
-<status status="PASS" starttime="20221116 10:35:23.130" endtime="20221116 10:35:23.863"/>
+<status status="PASS" starttime="20221116 16:49:50.440" endtime="20221116 16:49:51.818"/>
 </test>
-<test id="s1-t3" name="Refresh Coin Page" line="22">
+<test id="s1-t3" name="Refresh Coin Page" line="37">
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20221116 10:35:23.866" endtime="20221116 10:35:24.147"/>
+<status status="PASS" starttime="20221116 16:49:51.822" endtime="20221116 16:49:52.138"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>//*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221116 10:35:24.247" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:24.147" endtime="20221116 10:35:24.247"/>
+<msg timestamp="20221116 16:49:52.222" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.138" endtime="20221116 16:49:52.222"/>
 </kw>
-<status status="PASS" starttime="20221116 10:35:23.865" endtime="20221116 10:35:24.248"/>
+<status status="PASS" starttime="20221116 16:49:51.819" endtime="20221116 16:49:52.223"/>
 </test>
-<test id="s1-t4" name="Scrollable Coin Page" line="26">
+<test id="s1-t4" name="Switch Currency" line="41">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221116 16:49:52.226" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.225" endtime="20221116 16:49:52.336"/>
+</kw>
+<for flavor="IN">
+<var>${currency}</var>
+<value>@{currencyList}</value>
+<iter>
+<var name="${currency}">MYR</var>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:52.381" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='MYR']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.337" endtime="20221116 16:49:52.381"/>
+</kw>
+<status status="PASS" starttime="20221116 16:49:52.337" endtime="20221116 16:49:52.381"/>
+</iter>
+<iter>
+<var name="${currency}">EUR</var>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:52.399" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='EUR']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.382" endtime="20221116 16:49:52.399"/>
+</kw>
+<status status="PASS" starttime="20221116 16:49:52.381" endtime="20221116 16:49:52.399"/>
+</iter>
+<iter>
+<var name="${currency}">JPY</var>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:52.416" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='JPY']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.400" endtime="20221116 16:49:52.416"/>
+</kw>
+<status status="PASS" starttime="20221116 16:49:52.399" endtime="20221116 16:49:52.416"/>
+</iter>
+<iter>
+<var name="${currency}">GBP</var>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:52.432" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='GBP']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.416" endtime="20221116 16:49:52.433"/>
+</kw>
+<status status="PASS" starttime="20221116 16:49:52.416" endtime="20221116 16:49:52.433"/>
+</iter>
+<iter>
+<var name="${currency}">AUD</var>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:52.449" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='AUD']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.433" endtime="20221116 16:49:52.449"/>
+</kw>
+<status status="PASS" starttime="20221116 16:49:52.433" endtime="20221116 16:49:52.449"/>
+</iter>
+<iter>
+<var name="${currency}">CAD</var>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:52.465" level="INFO">Current page contains element '//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='CAD']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.449" endtime="20221116 16:49:52.465"/>
+</kw>
+<status status="PASS" starttime="20221116 16:49:52.449" endtime="20221116 16:49:52.465"/>
+</iter>
+<status status="PASS" starttime="20221116 16:49:52.337" endtime="20221116 16:49:52.466"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MYR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221116 16:49:52.466" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button" and @data-value='MYR']'.</msg>
+<status status="PASS" starttime="20221116 16:49:52.466" endtime="20221116 16:49:52.621"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20221116 16:49:52.621" endtime="20221116 16:49:56.008"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="RM"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221116 16:49:56.020" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.023" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221116 16:49:56.008" endtime="20221116 16:49:56.025"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.026" endtime="20221116 16:49:56.026"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.027" endtime="20221116 16:49:56.027"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.028" endtime="20221116 16:49:56.028"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="€"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.030" endtime="20221116 16:49:56.030"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.031" endtime="20221116 16:49:56.031"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${JPY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.031" endtime="20221116 16:49:56.031"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.031" endtime="20221116 16:49:56.031"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="¥"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.032" endtime="20221116 16:49:56.032"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.032" endtime="20221116 16:49:56.032"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.032" endtime="20221116 16:49:56.032"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GBP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.032" endtime="20221116 16:49:56.032"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.033" endtime="20221116 16:49:56.033"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="£"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.033" endtime="20221116 16:49:56.033"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.033" endtime="20221116 16:49:56.033"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.033" endtime="20221116 16:49:56.033"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AUD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.033" endtime="20221116 16:49:56.033"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.034" endtime="20221116 16:49:56.034"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="$"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.034" endtime="20221116 16:49:56.034"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.034" endtime="20221116 16:49:56.034"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.034" endtime="20221116 16:49:56.035"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.035" endtime="20221116 16:49:56.035"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.035" endtime="20221116 16:49:56.035"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="$"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.035" endtime="20221116 16:49:56.036"/>
+</kw>
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.036" endtime="20221116 16:49:56.036"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiBox-root css-8atqhb"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.036" endtime="20221116 16:49:56.036"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1i36psw" and text()="$"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.037" endtime="20221116 16:49:56.037"/>
+</kw>
+<status status="FAIL" starttime="20221116 16:49:52.224" endtime="20221116 16:49:56.038">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t5" name="Scrollable Coin Page" line="83">
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0,document.body.scrollHeight)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221116 10:35:24.250" level="INFO">Executing JavaScript:
+<msg timestamp="20221116 16:49:56.041" level="INFO">Executing JavaScript:
 window.scrollTo(0,document.body.scrollHeight)
 Without any arguments.</msg>
-<status status="PASS" starttime="20221116 10:35:24.250" endtime="20221116 10:35:24.613"/>
+<msg timestamp="20221116 16:49:56.052" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.053" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221116 16:49:56.040" endtime="20221116 16:49:56.056"/>
 </kw>
-<status status="PASS" starttime="20221116 10:35:24.249" endtime="20221116 10:35:24.613"/>
+<status status="FAIL" starttime="20221116 16:49:56.039" endtime="20221116 16:49:56.057">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</status>
 </test>
-<test id="s1-t5" name="Search Coin" line="29">
+<test id="s1-t6" name="Search Invalid Coin" line="86">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${searchTextfield}</arg>
+<arg>${searchBox}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:24.616" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:24.615" endtime="20221116 10:35:24.787"/>
+<msg timestamp="20221116 16:49:56.062" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]'.</msg>
+<msg timestamp="20221116 16:49:56.074" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.075" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221116 16:49:56.059" endtime="20221116 16:49:56.076"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchTextfield}</arg>
+<arg>${searchBox}</arg>
 <arg>Testcoin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:24.788" level="INFO">Typing text 'Testcoin' into text field '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:24.788" endtime="20221116 10:35:25.182"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.082" endtime="20221116 16:49:56.082"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>//*[@class="MuiTableBody-root css-1xnox0e"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221116 10:35:25.182" endtime="20221116 10:35:25.195"/>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.083" endtime="20221116 16:49:56.083"/>
 </kw>
-<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
-<arg>//*[class="MuiTableRow-root MuiTableRow-hover css-1gqug66"]</arg>
-<doc>Verifies that element ``locator`` is not found on the current page.</doc>
-<msg timestamp="20221116 10:35:25.207" level="INFO">Current page does not contain element '//*[class="MuiTableRow-root MuiTableRow-hover css-1gqug66"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:25.195" endtime="20221116 10:35:25.208"/>
-</kw>
+<status status="FAIL" starttime="20221116 16:49:56.058" endtime="20221116 16:49:56.084">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t7" name="Search Valid Coins" line="91">
+<for flavor="IN">
+<var>${coinID}</var>
+<value>@{coinID}</value>
+<iter>
+<var name="${coinID}">Bitcoin</var>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${searchTextfield}</arg>
+<arg>${searchBox}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:25.208" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:25.208" endtime="20221116 10:35:25.250"/>
+<msg timestamp="20221116 16:49:56.089" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]'.</msg>
+<msg timestamp="20221116 16:49:56.100" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.100" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221116 16:49:56.089" endtime="20221116 16:49:56.101"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
-<arg>${searchTextfield}</arg>
-<arg>CTRL+a\ue003</arg>
+<arg>${searchBox}</arg>
+<arg>CTRL+a/ue003</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20221116 10:35:25.251" level="INFO">Sending key(s) ('CTRL+a\ue003',) to //*[@class="MuiInputBase-input MuiOutlinedInput-input"] element.</msg>
-<msg timestamp="20221116 10:35:25.536" level="INFO">Pressing special key CONTROL down.</msg>
-<msg timestamp="20221116 10:35:25.536" level="INFO">Sending keys a</msg>
-<msg timestamp="20221116 10:35:25.536" level="INFO">Releasing special key CONTROL.</msg>
-<status status="PASS" starttime="20221116 10:35:25.250" endtime="20221116 10:35:25.782"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.102" endtime="20221116 16:49:56.102"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchTextfield}</arg>
-<arg>Dogecoin</arg>
+<arg>${searchBox}</arg>
+<arg>${coinID}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:25.782" level="INFO">Typing text 'Dogecoin' into text field '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:25.782" endtime="20221116 10:35:25.959"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiTableBody-root css-1xnox0e"]</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221116 10:35:25.960" endtime="20221116 10:35:25.968"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.103" endtime="20221116 16:49:56.103"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]//h6[text()="Dogecoin"]</arg>
+<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]//h6[text()="${coinID}"]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221116 10:35:25.981" level="INFO">Current page contains element '//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]//h6[text()="Dogecoin"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:25.968" endtime="20221116 10:35:25.981"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.103" endtime="20221116 16:49:56.103"/>
 </kw>
-<status status="PASS" starttime="20221116 10:35:24.615" endtime="20221116 10:35:25.981"/>
-</test>
-<test id="s1-t6" name="Coin Details" line="43">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]</arg>
+<arg>//*[@class="MuiTypography-root MuiTypography-subtitle2" and text()="${coinID}"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221116 10:35:25.983" level="INFO">Clicking element '//*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:25.983" endtime="20221116 10:35:26.061"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.103" endtime="20221116 16:49:56.103"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>//*[@role="img"]//ancestor::div[@class="jss123"]</arg>
-<arg>10</arg>
+<arg>//canvas[@role="img"]</arg>
+<arg>20</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221116 10:35:26.061" endtime="20221116 10:35:27.068"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.103" endtime="20221116 16:49:56.103"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class="MuiTypography-root MuiTypography-h3" and text()="DOGE"]</arg>
+<arg>//*[@class="MuiTypography-root MuiTypography-h4" and text()="${coinID}"]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221116 10:35:27.085" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h3" and text()="DOGE"]'.</msg>
-<status status="PASS" starttime="20221116 10:35:27.068" endtime="20221116 10:35:27.085"/>
+<status status="NOT RUN" starttime="20221116 16:49:56.104" endtime="20221116 16:49:56.104"/>
 </kw>
-<status status="PASS" starttime="20221116 10:35:25.982" endtime="20221116 10:35:27.086"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${coinsHeader}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.104" endtime="20221116 16:49:56.104"/>
+</kw>
+<status status="FAIL" starttime="20221116 16:49:56.088" endtime="20221116 16:49:56.104"/>
+</iter>
+<status status="FAIL" starttime="20221116 16:49:56.088" endtime="20221116 16:49:56.105"/>
+</for>
+<status status="FAIL" starttime="20221116 16:49:56.087" endtime="20221116 16:49:56.106">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t8" name="Dense Padding" line="105">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${coinListLargeContainer}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20221116 16:49:56.117" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.119" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221116 16:49:56.107" endtime="20221116 16:49:56.120"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${densePad}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.120" endtime="20221116 16:49:56.120"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${coinListSmallCOntainer}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221116 16:49:56.122" endtime="20221116 16:49:56.122"/>
+</kw>
+<status status="FAIL" starttime="20221116 16:49:56.107" endtime="20221116 16:49:56.124">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</status>
 </test>
 <doc>DRCtestcases</doc>
-<status status="PASS" starttime="20221116 10:35:21.435" endtime="20221116 10:35:27.087"/>
+<status status="FAIL" starttime="20221116 16:49:48.029" endtime="20221116 16:49:56.126"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="5" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Coinlistpage">Coinlistpage</stat>
+<stat pass="3" fail="5" skip="0" id="s1" name="Coinlistpage">Coinlistpage</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20221116 16:49:56.020" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.052" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.074" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.100" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
+<msg timestamp="20221116 16:49:56.117" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55f7781f82c3 &lt;unknown&gt;
+#1 0x55f77800183a &lt;unknown&gt;
+#2 0x55f777fe08e3 &lt;unknown&gt;
+#3 0x55f77805cebd &lt;unknown&gt;
+#4 0x55f778070029 &lt;unknown&gt;
+#5 0x55f778058d63 &lt;unknown&gt;
+#6 0x55f77802d7e3 &lt;unknown&gt;
+#7 0x55f77802ea21 &lt;unknown&gt;
+#8 0x55f77824618e &lt;unknown&gt;
+#9 0x55f778249622 &lt;unknown&gt;
+#10 0x55f77822caae &lt;unknown&gt;
+#11 0x55f77824a2a3 &lt;unknown&gt;
+#12 0x55f778220ecf &lt;unknown&gt;
+#13 0x55f77826a588 &lt;unknown&gt;
+#14 0x55f77826a706 &lt;unknown&gt;
+#15 0x55f7782848b2 &lt;unknown&gt;
+#16 0x7fce32207609 &lt;unknown&gt;
+</msg>
 </errors>
 </robot>
