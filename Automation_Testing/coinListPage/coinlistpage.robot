@@ -7,8 +7,8 @@ ${letsStartButton}   //*[@class="MuiButton-label" and contains(text(),"Let's Sta
 ${startButton}    //*[@class="MuiButton-label" and contains(text(),"Get Started!")]
 ${searchBox}    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]
 ${coinListLargeContainer}    //*[@class="MuiTableBody-root css-1xnox0e"]
-${coinListSmallCOntainer}    //*[@class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignLeft MuiTableCell-sizeSmall css-xzap77"]
-${densePad}    //*[@class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-1nr2wod"]
+${coinListSmallContainer}    //*[@class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignLeft MuiTableCell-sizeSmall css-xzap77"]
+${densePadToggle}    //*[@class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-1nr2wod"]
 
 ${coinsHeader}    //*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"]//div[text()="Coins"]
 
@@ -104,6 +104,6 @@ Search Valid Coins
 
 Dense Padding
     Wait Until Page Contains Element    ${coinListLargeContainer}    10
-    Click Element    ${densePad}
-    Page Should Contain Element    ${coinListSmallCOntainer}
+    Click Element    ${densePadToggle}
+    Page Should Contain Element    ${coinListSmallContainer}
 
