@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221114 16:12:48.038" rpa="false" schemaversion="3">
+<suite id="s1" name="QA Testing" source="/home/esther/Documents/DRC/QA_Testing">
+<suite id="s1-s1" name="Automation Testing" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing">
+<suite id="s1-s1-s1" name="homePage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/homePage">
+<suite id="s1-s1-s1-s1" name="Homepage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/homePage/homepage.robot">
+<test id="s1-s1-s1-s1-t1" name="Switch Currency" line="28">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221114 16:12:48.289" level="INFO">Clicking element '//*[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input']'.</msg>
+<msg timestamp="20221114 16:12:48.290" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20221114 16:12:48.291" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20221114 16:12:48.288" endtime="20221114 16:12:48.294"/>
+</kw>
+<for flavor="IN">
+<var>${currency}</var>
+<value>@{currencyList}</value>
+<iter>
+<var name="${currency}"/>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.295" endtime="20221114 16:12:48.296"/>
+</kw>
+<status status="NOT RUN" starttime="20221114 16:12:48.295" endtime="20221114 16:12:48.296"/>
+</iter>
+<status status="NOT RUN" starttime="20221114 16:12:48.295" endtime="20221114 16:12:48.296"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MYR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.296" endtime="20221114 16:12:48.297"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.297" endtime="20221114 16:12:48.297"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'RM')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.298" endtime="20221114 16:12:48.298"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.298" endtime="20221114 16:12:48.299"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EUR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.299" endtime="20221114 16:12:48.299"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.299" endtime="20221114 16:12:48.300"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'€')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.300" endtime="20221114 16:12:48.301"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.302" endtime="20221114 16:12:48.302"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${JPY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.303" endtime="20221114 16:12:48.304"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.304" endtime="20221114 16:12:48.305"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'¥')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.305" endtime="20221114 16:12:48.306"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.306" endtime="20221114 16:12:48.307"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GBP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.307" endtime="20221114 16:12:48.308"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.308" endtime="20221114 16:12:48.308"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'£')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.309" endtime="20221114 16:12:48.309"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.310" endtime="20221114 16:12:48.310"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AUD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.311" endtime="20221114 16:12:48.311"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.312" endtime="20221114 16:12:48.313"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.313" endtime="20221114 16:12:48.314"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${currencySwitcher}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.314" endtime="20221114 16:12:48.315"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.315" endtime="20221114 16:12:48.315"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiCircularProgress-svg"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.316" endtime="20221114 16:12:48.316"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.316" endtime="20221114 16:12:48.317"/>
+</kw>
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.318" endtime="20221114 16:12:48.318"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//p[@class='MuiTypography-root MuiTypography-body1' and contains(text(),'$')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221114 16:12:48.319" endtime="20221114 16:12:48.320"/>
+</kw>
+<status status="FAIL" starttime="20221114 16:12:48.286" endtime="20221114 16:12:48.321">No browser is open.</status>
+</test>
+<doc>DRCtestcases</doc>
+<status status="FAIL" starttime="20221114 16:12:48.100" endtime="20221114 16:12:48.323"/>
+</suite>
+<status status="FAIL" starttime="20221114 16:12:48.096" endtime="20221114 16:12:48.325"/>
+</suite>
+<status status="FAIL" starttime="20221114 16:12:48.092" endtime="20221114 16:12:48.328"/>
+</suite>
+<status status="FAIL" starttime="20221114 16:12:48.063" endtime="20221114 16:12:48.330"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="QA Testing">QA Testing</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Automation Testing">QA Testing.Automation Testing</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="homePage">QA Testing.Automation Testing.homePage</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Homepage">QA Testing.Automation Testing.homePage.Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
