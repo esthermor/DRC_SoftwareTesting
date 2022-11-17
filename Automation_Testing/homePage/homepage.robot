@@ -133,7 +133,7 @@ Login to kaching.one
     # Login button
     Wait Until Element Is Enabled    ${loginButton}    10
     Click Element    ${loginButton}
-    Wait Until Page Contains Element    /${loginSuccess}    10
+    Wait Until Page Contains Element    ${loginSuccess}    10
     Page Should Contain Element    ${loginSuccess}
 
     # Sign In with Google
