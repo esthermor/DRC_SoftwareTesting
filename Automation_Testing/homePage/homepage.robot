@@ -144,10 +144,6 @@ Login to kaching.one
     Page Should Contain Element    //h1[text()=" Create Account"]
 
     # Press Keys    None    ESC        
-
-# Popular Coins
-#     Set Focus To Element    //*[@class="jss63"]//*[@class="MuiTypography-root MuiTypography-h6" and text()="Dogecoin"]
-#     Click Element    //*[@class="jss63"]//*[@class="MuiTypography-root MuiTypography-h6" and text()="Dogecoin"]
    
 Navigation to Coin Page 
     Click Element    ${coinsHeader}

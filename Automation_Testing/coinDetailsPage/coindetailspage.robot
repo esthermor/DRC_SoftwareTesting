@@ -21,26 +21,34 @@ ${passwordLoginTextfield}    //*[@type="password"]
 ${loginButton}    //*[@class="MuiButton-label" and text()="Login"]
 ${loginSuccess}    //*[@class="MuiAlert-message"]
 
+${ethereumCoin}    //h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]
+${chart}    //canvas[@role="img"]
+${ethereumPage}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]
+
+${communityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Community Score"]
+${developerScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Developer Score"]
+${liquidityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Liquidity Score"]
+
 *** Test Cases ***
 Open & Verify Kaching.one
     Open Browser    https://stocgeex.xyz    chrome
     Maximize Browser Window
     Click Element    ${letsStartButton}
 
-Navigate to Coin Details Page
+Navigate to Coin Details Page (Ethereum)
     Execute Javascript    window.scrollTo(0,370)
-    Wait Until Element Is Visible    //h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]    10
-    Click Element    //h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]
-    Wait Until Page Contains Element    //canvas[@role="img"]    10
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]
+    Wait Until Element Is Visible    ${ethereumCoin}    10
+    Click Element    ${ethereumCoin}
+    Wait Until Page Contains Element    ${chart}    10
+    Page Should Contain Element    ${ethereumPage}
 
 Scrollable Coin Details Page
     Execute Javascript    window.scrollTo(0,document.body.scrollHeight)    
 
 Refresh Coin Details Page
     Reload Page
-    Wait Until Page Contains Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]
+    Wait Until Page Contains Element    ${ethereumPage}
+    Page Should Contain Element    ${ethereumPage}
 
 Switch Currency
     Click Element    ${currencySwitcher}
@@ -85,9 +93,9 @@ Switch Currency
     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="USD"]
 
 Coin Page Statistics
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Community Score"]
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Developer Score"]
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Liquidity Score"] 
+    Page Should Contain Element    ${communityScore}
+    Page Should Contain Element    ${developerScore}
+    Page Should Contain Element    ${liquidityScore} 
     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="%"]
     
 Favourite Coin

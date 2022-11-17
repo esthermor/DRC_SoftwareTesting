@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221117 12:51:46.398" rpa="false" schemaversion="3">
+<suite id="s1" name="Welcomepage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/welcomePage/welcomepage.robot">
+<test id="s1-t1" name="Open &amp; Verify Kaching.one" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://stocgeex.xyz</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221117 12:51:46.553" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
+<status status="PASS" starttime="20221117 12:51:46.552" endtime="20221117 12:51:47.778"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221117 12:51:47.778" endtime="20221117 12:51:47.887"/>
+</kw>
+<status status="PASS" starttime="20221117 12:51:46.551" endtime="20221117 12:51:47.888"/>
+</test>
+<test id="s1-t2" name="Refresh Welcome Page" line="15">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20221117 12:51:47.890" endtime="20221117 12:51:48.022"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiTypography-root MuiTypography-h2" and text()="Hello Player 1!"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221117 12:51:48.045" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h2" and text()="Hello Player 1!"]'.</msg>
+<status status="PASS" starttime="20221117 12:51:48.023" endtime="20221117 12:51:48.045"/>
+</kw>
+<status status="PASS" starttime="20221117 12:51:47.889" endtime="20221117 12:51:48.046"/>
+</test>
+<test id="s1-t3" name="Navigate to Home Page" line="19">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${letsStartButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221117 12:51:48.048" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
+<status status="PASS" starttime="20221117 12:51:48.047" endtime="20221117 12:51:48.211"/>
+</kw>
+<status status="PASS" starttime="20221117 12:51:48.046" endtime="20221117 12:51:48.211"/>
+</test>
+<doc>DRCTestCases</doc>
+<status status="PASS" starttime="20221117 12:51:46.399" endtime="20221117 12:51:48.212"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Welcomepage">Welcomepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
