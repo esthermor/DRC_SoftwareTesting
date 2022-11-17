@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221116 17:24:25.239" rpa="false" schemaversion="3">
+<suite id="s1" name="Coindetailspage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/coinDetailsPage/coindetailspage.robot">
+<test id="s1-t1" name="Open &amp; Verify Kaching.one" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://stocgeex.xyz</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221116 17:24:25.373" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
+<status status="PASS" starttime="20221116 17:24:25.373" endtime="20221116 17:24:27.320"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221116 17:24:27.321" endtime="20221116 17:24:27.436"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${letsStartButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221116 17:24:27.439" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
+<status status="PASS" starttime="20221116 17:24:27.437" endtime="20221116 17:24:27.610"/>
+</kw>
+<status status="PASS" starttime="20221116 17:24:25.372" endtime="20221116 17:24:27.610"/>
+</test>
+<test id="s1-t2" name="Scrollable Coin Details Page" line="14">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221116 17:24:27.614" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20221116 17:24:27.613" endtime="20221116 17:24:27.620"/>
+</kw>
+<status status="PASS" starttime="20221116 17:24:27.611" endtime="20221116 17:24:27.620"/>
+</test>
+<test id="s1-t3" name="Navigate to Coin Details Page" line="17">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221116 17:24:27.622" endtime="20221116 17:24:29.530"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221116 17:24:29.531" level="INFO">Clicking element '//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]'.</msg>
+<msg timestamp="20221116 17:24:30.924" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221116 17:24:30.925" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (778, -497)
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x564b590a62c3 &lt;unknown&gt;
+#1 0x564b58eaf83a &lt;unknown&gt;
+#2 0x564b58ef03b4 &lt;unknown&gt;
+#3 0x564b58eedd9c &lt;unknown&gt;
+#4 0x564b58eeb384 &lt;unknown&gt;
+#5 0x564b58ee9f36 &lt;unknown&gt;
+#6 0x564b58edd871 &lt;unknown&gt;
+#7 0x564b58f06f42 &lt;unknown&gt;
+#8 0x564b58edd073 &lt;unknown&gt;
+#9 0x564b58f070ae &lt;unknown&gt;
+#10 0x564b58f1ea50 &lt;unknown&gt;
+#11 0x564b58f06d63 &lt;unknown&gt;
+#12 0x564b58edb7e3 &lt;unknown&gt;
+#13 0x564b58edca21 &lt;unknown&gt;
+#14 0x564b590f418e &lt;unknown&gt;
+#15 0x564b590f7622 &lt;unknown&gt;
+#16 0x564b590daaae &lt;unknown&gt;
+#17 0x564b590f82a3 &lt;unknown&gt;
+#18 0x564b590ceecf &lt;unknown&gt;
+#19 0x564b59118588 &lt;unknown&gt;
+#20 0x564b59118706 &lt;unknown&gt;
+#21 0x564b591328b2 &lt;unknown&gt;
+#22 0x7f8d3e7b0609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221116 17:24:29.530" endtime="20221116 17:24:30.926"/>
+</kw>
+<status status="FAIL" starttime="20221116 17:24:27.621" endtime="20221116 17:24:30.928">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (778, -497)
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x564b590a62c3 &lt;unknown&gt;
+#1 0x564b58eaf83a &lt;unknown&gt;
+#2 0x564b58ef03b4 &lt;unknown&gt;
+#3 0x564b58eedd9c &lt;unknown&gt;
+#4 0x564b58eeb384 &lt;unknown&gt;
+#5 0x564b58ee9f36 &lt;unknown&gt;
+#6 0x564b58edd871 &lt;unknown&gt;
+#7 0x564b58f06f42 &lt;unknown&gt;
+#8 0x564b58edd073 &lt;unknown&gt;
+#9 0x564b58f070ae &lt;unknown&gt;
+#10 0x564b58f1ea50 &lt;unknown&gt;
+#11 0x564b58f06d63 &lt;unknown&gt;
+#12 0x564b58edb7e3 &lt;unknown&gt;
+#13 0x564b58edca21 &lt;unknown&gt;
+#14 0x564b590f418e &lt;unknown&gt;
+#15 0x564b590f7622 &lt;unknown&gt;
+#16 0x564b590daaae &lt;unknown&gt;
+#17 0x564b590f82a3 &lt;unknown&gt;
+#18 0x564b590ceecf &lt;unknown&gt;
+#19 0x564b59118588 &lt;unknown&gt;
+#20 0x564b59118706 &lt;unknown&gt;
+#21 0x564b591328b2 &lt;unknown&gt;
+#22 0x7f8d3e7b0609 &lt;unknown&gt;
+</status>
+</test>
+<doc>DRCtestcases</doc>
+<status status="FAIL" starttime="20221116 17:24:25.240" endtime="20221116 17:24:30.929"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Coindetailspage">Coindetailspage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
