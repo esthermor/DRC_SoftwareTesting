@@ -38,7 +38,7 @@ ${signUpLink}    //p[text()="Don't have an account?"]//*[@style="cursor: pointer
 
 ${coinsHeader}    //*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"]//div[text()="Coins"]
 
-*** Test Cases ***
+*** Test Cases ***    
 Open & Verify Kaching.one
     Open Browser    https://stocgeex.xyz    chrome
     Maximize Browser Window
@@ -133,7 +133,7 @@ Login to kaching.one
     # Login button
     Wait Until Element Is Enabled    ${loginButton}    10
     Click Element    ${loginButton}
-    Wait Until Page Contains Element    /${loginSuccess}    10
+    Wait Until Page Contains Element    ${loginSuccess}    10
     Page Should Contain Element    ${loginSuccess}
 
     # Sign In with Google
@@ -144,10 +144,6 @@ Login to kaching.one
     Page Should Contain Element    //h1[text()=" Create Account"]
 
     # Press Keys    None    ESC        
-
-# Popular Coins
-#     Set Focus To Element    //*[@class="jss63"]//*[@class="MuiTypography-root MuiTypography-h6" and text()="Dogecoin"]
-#     Click Element    //*[@class="jss63"]//*[@class="MuiTypography-root MuiTypography-h6" and text()="Dogecoin"]
    
 Navigation to Coin Page 
     Click Element    ${coinsHeader}
@@ -155,3 +151,4 @@ Navigation to Coin Page
 
 Close 
     Close Browser
+    
