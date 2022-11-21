@@ -38,7 +38,7 @@ ${signUpLink}    //p[text()="Don't have an account?"]//*[@style="cursor: pointer
 
 ${coinsHeader}    //*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"]//div[text()="Coins"]
 
-*** Test Cases ***
+*** Test Cases ***    
 Open & Verify Kaching.one
     Open Browser    https://stocgeex.xyz    chrome
     Maximize Browser Window
@@ -151,3 +151,4 @@ Navigation to Coin Page
 
 Close 
     Close Browser
+    
