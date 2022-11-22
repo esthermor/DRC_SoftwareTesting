@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary    
-Library    EyesLibrary    runner=web    ApiKey=hOnE68XZBAX3dsA4CFevYOilUuZECcYDihKB103WA0j20110         
 Documentation    DRCTestCases
 
 *** Variables ***
