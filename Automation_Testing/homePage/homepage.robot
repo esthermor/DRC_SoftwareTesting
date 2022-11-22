@@ -48,7 +48,11 @@ Open & Verify Kaching.one
 
 Homepage
     Click Element    ${startButton}
-    
+
+Scrollable Homepage
+    Execute Javascript    window.scrollTo(0,document.body.scrollHeight)
+    Reload Page
+
 Switch Currency
     Click Element    ${currencySwitcher}
     FOR    ${currency}    IN    @{currencyList}
