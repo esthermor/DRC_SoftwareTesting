@@ -51,14 +51,14 @@ Navigate to Portfolio Page
     Wait Until Page Contains Element    //canvas[@role="img"]    30
     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h3" and text()="Portfolio"]
 
-Refresh Portfolio Page
-    Reload Page
-    Wait Until Page Contains Element    //canvas[@role="img"]    10
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h3" and text()="Portfolio"]
+# Refresh Portfolio Page
+#     Reload Page
+#     Wait Until Page Contains Element    //canvas[@role="img"]    10
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h3" and text()="Portfolio"]
 
-Scrollable Portfolio Page
-    Execute Javascript    window.scrollTo(0,document.body.scrollHeight)
-    Execute Javascript    window.scrollTo(0,-document.body.scrollHeight)
+# Scrollable Portfolio Page
+#     Execute Javascript    window.scrollTo(0,document.body.scrollHeight)
+#     Execute Javascript    window.scrollTo(0,-document.body.scrollHeight)
 
 # Switch Currency
 #     Click Element    ${currencySwitcher}
@@ -68,37 +68,66 @@ Scrollable Portfolio Page
 
 #     Click Element    ${MYR}
 #     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
-#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="RM"]
-
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h5" and text()="RM"]
 #     Click Element    ${currencySwitcher}
 #     Click Element    ${EUR}
 #     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
-#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="€"]
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h5" and text()="€"]
 
 #     Click Element    ${currencySwitcher}
 #     Click Element    ${JPY}
 #     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
-#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="¥"]
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h5" and text()="¥"]
 
 #     Click Element    ${currencySwitcher}
 #     Wait Until Page Contains Element    //*[@class="MuiList-root MuiMenu-list MuiList-padding"]    10
 #     Click Element    ${GBP}
 #     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
-#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="£"]
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h5" and text()="£"]
 
 #     Click Element    ${currencySwitcher}
 #     Wait Until Page Contains Element    //*[@class="MuiList-root MuiMenu-list MuiList-padding"]    10
 #     Click Element    ${AUD}
 #     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
-#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="$"]
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h5" and text()="$"]
 
 #     Click Element    ${currencySwitcher}
 #     Wait Until Page Contains Element    //*[@class="MuiList-root MuiMenu-list MuiList-padding"]    10
 #     Click Element    ${CAD}
 #     Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
-#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="$"]
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h5" and text()="$"]
 
 #     Reload Page
 #     Wait Until Page Contains Element    //*[@class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input" and text()=" USD "]    10
 #     Page Should Contain Element    //*[@class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input" and text()=" USD "]
+
+
+# SHOULD DO THE IF NO COIN IN LIST THEN RUN KEYWORD, ADD NEW COIN
+    Click Element    //*[@class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-13y7ul3"]
+
+# Edit Holding Amount
+#     Click Element    //*[@class="MuiButton-label"]
+#     Page Should Contain Element    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"]
+#     Click Element    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"]
+#     Press Keys    //*[@class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"]    100
+#     ${coinQuantity}    Get Value    xpath=/html/body/div[2]/div[3]/div/div/div[4]/div/input
+#     ${coinUSD}    Get Text    //*[@class="MuiTypography-root MuiTypography-h5"]
+#     ${conversion}        
+
+    # Click Element    //*[@class="MuiButton-label" and text()="Submit"]
+
+
+Delete Asset
+    [Documentation]    Remove Bitcoin from the Current Asset list
+    Click Element    xpath=/html/body/div/div/div[2]/div[1]/div[3]/div/div/div/table/tbody/tr[1]/td[2]/div/img
+    # Check asset should be deleted from list    
+
+Add New Coin
+    [Documentation]    Add Bitcoin into the Current Asset list
+    Click Element    //*[@class="MuiButton-label" and text()="Add New Coin"]
+    Wait Until Page Contains Element    //*[@class="MuiTypography-root MuiTypography-h1" and text()="Coins"]
+    Execute Javascript    window.scrollTo(0,1500)        
+    Click Element    xpath=/html/body/div/div/div[2]/div[3]/div[2]/div/div[2]/table/tbody/tr[1]/td[4]/img
+    Page Should Contain Element    //*[@class="MuiAlert-message" and text()="Bitcoin added to your watchlist"]
+    
 
