@@ -91,7 +91,7 @@ Search Invalid Coin
 Search Valid Coins
     FOR    ${coinID}    IN    @{coinID}
     Click Element    ${searchBox}
-    Press Keys    ${searchBox}    CTRL+a/ue003
+    Press Keys    ${searchBox}    CTRL+a\ue003
     Input Text    ${searchBox}    ${coinID}
     Page Should Contain Element    //*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]//h6[text()="${coinID}"]
 
