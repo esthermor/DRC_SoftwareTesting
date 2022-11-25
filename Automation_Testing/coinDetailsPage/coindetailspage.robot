@@ -97,10 +97,20 @@ Crypto Converter
     [Documentation]    To check the conversion from Crypto Amount to Currency Amount and vice versa
     Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    500
-    # ${currencyAmount}    Get Value    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]
-    ${currencyAmount}    Execute Javascript    return (function(){parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=>z.innerText.match(/\$([0-9,]+(\.[0-9]+))/))).filter(z=>z)[0]?.[1].replaceAll(',','')??'NaN')})()
-    Should Be Equal    ${currencyAmount}    0
-    # ${coinPrice}    Get Value    //h4[@class="MuiTypography-root MuiTypography-h4" and text()[3]]
+    ${currencyAmount}    Get Value    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input
+    ${coinPrice}     Execute Javascript    return (parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=>z.innerText.match(/\\$([0-9,]+(\\.[0-9]+))/))).filter(z=>z)[0]?.[1].replaceAll(',','')??'NaN'))
+    ${conversionCryptoToCurrency}    Evaluate    500*${coinPrice}
+    Should Be Equal As Numbers    ${currencyAmount}    ${conversionCryptoToCurrency}
+
+    Execute Javascript    
+    Click Element    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input
+    Press Keys    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input    CTRL+a\ue003
+    Input Text    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input    500
+    ${cryptoAmount}    Get Value    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
+    ${conversionCurrencyToCrypto}    Evaluate    500/${coinPrice}
+    Should Be Equal As Numbers    ${cryptoAmount}    ${conversionCurrencyToCrypto}
+
+    
 
 # Coin Page Statistics
 #     Page Should Contain Element    ${communityScore}
