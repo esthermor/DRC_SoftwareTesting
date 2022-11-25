@@ -33,6 +33,7 @@ ${liquidityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()
 Open & Verify Kaching.one
     Open Browser    https://stocgeex.xyz    chrome
     Maximize Browser Window
+    Wait Until Page Contains Element    //*[@class="MuiTypography-root MuiTypography-h2" and text()="Hello Investor!"]    10
     Click Element    ${letsStartButton}
 
 Navigate to Coin Details Page (Ethereum)
@@ -50,11 +51,11 @@ Refresh Coin Details Page
     Wait Until Page Contains Element    ${ethereumPage}
     Page Should Contain Element    ${ethereumPage}
 
-Switch Currency
-    Click Element    ${currencySwitcher}
-    FOR    ${currency}    IN    @{currencyList}
-    Page Should Contain Element    //*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']
-    END
+# Switch Currency
+#     Click Element    ${currencySwitcher}
+#     FOR    ${currency}    IN    @{currencyList}
+#     Page Should Contain Element    //*[@class="MuiList-root MuiMenu-list MuiList-padding"]//li[@data-value='${currency}']
+#     END
     
     # Click Element    ${MYR}
     # Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
@@ -88,29 +89,38 @@ Switch Currency
     # Wait Until Page Does Not Contain Element    //*[@class="MuiCircularProgress-svg"]    20
     # Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="$"]
 
-    Reload Page
-    Wait Until Page Contains Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="USD"]
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="USD"]
+    # Reload Page
+    # Wait Until Page Contains Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="USD"]
+    # Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="USD"]
 
-Coin Page Statistics
-    Page Should Contain Element    ${communityScore}
-    Page Should Contain Element    ${developerScore}
-    Page Should Contain Element    ${liquidityScore} 
-    Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="%"]
+Crypto Converter
+    [Documentation]    To check the conversion from Crypto Amount to Currency Amount and vice versa
+    Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
+    Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    500
+    # ${currencyAmount}    Get Value    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]
+    ${currencyAmount}    Execute Javascript    return (function(){parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=>z.innerText.match(/\$([0-9,]+(\.[0-9]+))/))).filter(z=>z)[0]?.[1].replaceAll(',','')??'NaN')})()
+    Should Be Equal    ${currencyAmount}    0
+    # ${coinPrice}    Get Value    //h4[@class="MuiTypography-root MuiTypography-h4" and text()[3]]
+
+# Coin Page Statistics
+#     Page Should Contain Element    ${communityScore}
+#     Page Should Contain Element    ${developerScore}
+#     Page Should Contain Element    ${liquidityScore} 
+#     Page Should Contain Element    //*[@class="MuiTypography-root MuiTypography-h4" and text()="%"]
     
-Favourite Coin
-    Click Element    ${unfilledFavButton}    
-    Page Should Contain Element    ${loginBox} 
+# Favourite Coin
+#     Click Element    ${unfilledFavButton}    
+#     Page Should Contain Element    ${loginBox} 
 
-    # Log user in
-    Click Element    ${emailLoginTextfield}
-    Input Text    ${emailLoginTextfield}    Testing_123@gmail.com
+#     # Log user in
+#     Click Element    ${emailLoginTextfield}
+#     Input Text    ${emailLoginTextfield}    Testing_123@gmail.com
 
-    Click Element    ${passwordLoginTextfield}
-    Input Text    ${passwordLoginTextfield}    testing@123
+#     Click Element    ${passwordLoginTextfield}
+#     Input Text    ${passwordLoginTextfield}    testing@123
 
-    Wait Until Element Is Enabled    ${loginButton}    10
-    Click Element    ${loginButton}    
-    Wait Until Page Does Not Contain Element    ${loginBox}
-    Wait Until Page Does Not Contain Element    ${loginSuccess}
-    Page Should Contain Element    ${filledFavButton}
+#     Wait Until Element Is Enabled    ${loginButton}    10
+#     Click Element    ${loginButton}    
+#     Wait Until Page Does Not Contain Element    ${loginBox}
+#     Wait Until Page Does Not Contain Element    ${loginSuccess}
+#     Page Should Contain Element    ${filledFavButton}
