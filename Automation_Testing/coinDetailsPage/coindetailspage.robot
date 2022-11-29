@@ -102,15 +102,14 @@ Crypto Converter
     ${conversionCryptoToCurrency}    Evaluate    500*${coinPrice}
     Should Be Equal As Numbers    ${currencyAmount}    ${conversionCryptoToCurrency}
 
-    Execute Javascript    
-    Click Element    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input
-    Press Keys    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input    CTRL+a\ue003
-    Input Text    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input    500
-    ${cryptoAmount}    Get Value    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
-    ${conversionCurrencyToCrypto}    Evaluate    500/${coinPrice}
-    Should Be Equal As Numbers    ${cryptoAmount}    ${conversionCurrencyToCrypto}
-
+    Execute Javascript    document.querySelectorAll('[class="MuiInputBase-input MuiOutlinedInput-input"]')[1].scrollIntoViewIfNeeded()
+    Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"] 
     
+    # Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    CTRL+a\ue003
+    # Input Text    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    500
+    # ${cryptoAmount}    Get Value    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
+    # ${conversionCurrencyToCrypto}    Evaluate    500/${coinPrice}
+    # Should Be Equal As Numbers    ${cryptoAmount}    ${conversionCurrencyToCrypto}
 
 # Coin Page Statistics
 #     Page Should Contain Element    ${communityScore}

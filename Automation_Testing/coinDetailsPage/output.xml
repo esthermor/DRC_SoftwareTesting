@@ -1,136 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221125 12:22:10.971" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221129 11:53:40.834" rpa="false" schemaversion="3">
 <suite id="s1" name="Coindetailspage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/coinDetailsPage/coindetailspage.robot">
 <test id="s1-t1" name="Open &amp; Verify Kaching.one" line="33">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://stocgeex.xyz</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221125 12:22:11.239" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
-<status status="PASS" starttime="20221125 12:22:11.238" endtime="20221125 12:22:13.991"/>
+<msg timestamp="20221129 11:53:41.010" level="INFO">Opening browser 'chrome' to base url 'https://stocgeex.xyz'.</msg>
+<status status="PASS" starttime="20221129 11:53:41.010" endtime="20221129 11:53:43.655"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221125 12:22:13.991" endtime="20221125 12:22:14.097"/>
+<status status="PASS" starttime="20221129 11:53:43.656" endtime="20221129 11:53:43.760"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>//*[@class="MuiTypography-root MuiTypography-h2" and text()="Hello Investor!"]</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221125 12:22:14.098" endtime="20221125 12:22:17.866"/>
+<status status="PASS" starttime="20221129 11:53:43.760" endtime="20221129 11:53:45.228"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${letsStartButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 12:22:17.867" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
-<status status="PASS" starttime="20221125 12:22:17.867" endtime="20221125 12:22:18.065"/>
+<msg timestamp="20221129 11:53:45.228" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
+<status status="PASS" starttime="20221129 11:53:45.228" endtime="20221129 11:53:45.388"/>
 </kw>
-<status status="PASS" starttime="20221125 12:22:11.237" endtime="20221125 12:22:18.066"/>
+<status status="PASS" starttime="20221129 11:53:41.009" endtime="20221129 11:53:45.388"/>
 </test>
 <test id="s1-t2" name="Navigate to Coin Details Page (Ethereum)" line="39">
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0,370)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221125 12:22:18.069" level="INFO">Executing JavaScript:
+<msg timestamp="20221129 11:53:45.390" level="INFO">Executing JavaScript:
 window.scrollTo(0,370)
 Without any arguments.</msg>
-<status status="PASS" starttime="20221125 12:22:18.068" endtime="20221125 12:22:18.098"/>
+<status status="PASS" starttime="20221129 11:53:45.389" endtime="20221129 11:53:45.394"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ethereumCoin}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221125 12:22:18.098" endtime="20221125 12:22:19.306"/>
+<status status="PASS" starttime="20221129 11:53:45.394" endtime="20221129 11:53:46.041"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ethereumCoin}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 12:22:19.307" level="INFO">Clicking element '//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]'.</msg>
-<status status="PASS" starttime="20221125 12:22:19.307" endtime="20221125 12:22:20.605"/>
+<msg timestamp="20221129 11:53:46.041" level="INFO">Clicking element '//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]'.</msg>
+<status status="PASS" starttime="20221129 11:53:46.041" endtime="20221129 11:53:46.140"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${chart}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221125 12:22:20.605" endtime="20221125 12:22:21.213"/>
+<status status="PASS" starttime="20221129 11:53:46.141" endtime="20221129 11:53:46.738"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>${ethereumPage}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221125 12:22:21.261" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]'.</msg>
-<status status="PASS" starttime="20221125 12:22:21.215" endtime="20221125 12:22:21.261"/>
+<msg timestamp="20221129 11:53:46.761" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]'.</msg>
+<status status="PASS" starttime="20221129 11:53:46.738" endtime="20221129 11:53:46.761"/>
 </kw>
-<status status="PASS" starttime="20221125 12:22:18.067" endtime="20221125 12:22:21.262"/>
+<status status="PASS" starttime="20221129 11:53:45.389" endtime="20221129 11:53:46.762"/>
 </test>
 <test id="s1-t3" name="Scrollable Coin Details Page" line="46">
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0,document.body.scrollHeight)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221125 12:22:21.265" level="INFO">Executing JavaScript:
+<msg timestamp="20221129 11:53:46.764" level="INFO">Executing JavaScript:
 window.scrollTo(0,document.body.scrollHeight)
 Without any arguments.</msg>
-<status status="PASS" starttime="20221125 12:22:21.264" endtime="20221125 12:22:21.296"/>
+<status status="PASS" starttime="20221129 11:53:46.763" endtime="20221129 11:53:46.772"/>
 </kw>
-<status status="PASS" starttime="20221125 12:22:21.263" endtime="20221125 12:22:21.296"/>
+<status status="PASS" starttime="20221129 11:53:46.763" endtime="20221129 11:53:46.772"/>
 </test>
 <test id="s1-t4" name="Refresh Coin Details Page" line="49">
 <kw name="Reload Page" library="SeleniumLibrary">
 <doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20221125 12:22:21.299" endtime="20221125 12:22:22.594"/>
+<status status="PASS" starttime="20221129 11:53:46.773" endtime="20221129 11:53:50.003"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${ethereumPage}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221125 12:22:22.594" endtime="20221125 12:22:22.810"/>
+<status status="PASS" starttime="20221129 11:53:50.003" endtime="20221129 11:53:50.342"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>${ethereumPage}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221125 12:22:22.989" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]'.</msg>
-<status status="PASS" starttime="20221125 12:22:22.811" endtime="20221125 12:22:22.990"/>
+<msg timestamp="20221129 11:53:50.359" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]'.</msg>
+<status status="PASS" starttime="20221129 11:53:50.342" endtime="20221129 11:53:50.359"/>
 </kw>
-<status status="PASS" starttime="20221125 12:22:21.297" endtime="20221125 12:22:22.991"/>
+<status status="PASS" starttime="20221129 11:53:46.773" endtime="20221129 11:53:50.360"/>
 </test>
 <test id="s1-t5" name="Crypto Converter" line="96">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 12:22:22.995" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]'.</msg>
-<status status="PASS" starttime="20221125 12:22:22.995" endtime="20221125 12:22:23.118"/>
+<msg timestamp="20221129 11:53:50.363" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]'.</msg>
+<status status="PASS" starttime="20221129 11:53:50.363" endtime="20221129 11:53:50.468"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]</arg>
 <arg>500</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20221125 12:22:23.119" level="INFO">Sending key(s) ('500',) to //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"] element.</msg>
-<msg timestamp="20221125 12:22:23.731" level="INFO">Sending keys 500</msg>
-<status status="PASS" starttime="20221125 12:22:23.118" endtime="20221125 12:22:23.795"/>
+<msg timestamp="20221129 11:53:50.469" level="INFO">Sending key(s) ('500',) to //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"] element.</msg>
+<msg timestamp="20221129 11:53:50.768" level="INFO">Sending keys 500</msg>
+<status status="PASS" starttime="20221129 11:53:50.469" endtime="20221129 11:53:50.801"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${currencyAmount}</var>
+<arg>xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20221129 11:53:50.840" level="INFO">${currencyAmount} = 592840</msg>
+<status status="PASS" starttime="20221129 11:53:50.801" endtime="20221129 11:53:50.840"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
-<var>${currencyAmount}</var>
-<arg>return (function(){parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=&gt;z.innerText.match(/\$([0-9,]+(\.[0-9]+))/))).filter(z=&gt;z)[0]?.[1].replaceAll(',','')??'NaN')})()</arg>
+<var>${coinPrice}</var>
+<arg>return (parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=&gt;z.innerText.match(/\\$([0-9,]+(\\.[0-9]+))/))).filter(z=&gt;z)[0]?.[1].replaceAll(',','')??'NaN'))</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221125 12:22:23.796" level="INFO">Executing JavaScript:
-return (function(){parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=&gt;z.innerText.match(/$([0-9,]+(.[0-9]+))/))).filter(z=&gt;z)[0]?.[1].replaceAll(',','')??'NaN')})()
+<msg timestamp="20221129 11:53:50.841" level="INFO">Executing JavaScript:
+return (parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=&gt;z.innerText.match(/\$([0-9,]+(\.[0-9]+))/))).filter(z=&gt;z)[0]?.[1].replaceAll(',','')??'NaN'))
 Without any arguments.</msg>
-<msg timestamp="20221125 12:22:23.820" level="INFO">${currencyAmount} = None</msg>
-<status status="PASS" starttime="20221125 12:22:23.796" endtime="20221125 12:22:23.820"/>
+<msg timestamp="20221129 11:53:50.852" level="INFO">${coinPrice} = 1185.68</msg>
+<status status="PASS" starttime="20221129 11:53:50.840" endtime="20221129 11:53:50.852"/>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
+<kw name="Evaluate" library="BuiltIn">
+<var>${conversionCryptoToCurrency}</var>
+<arg>500*${coinPrice}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221129 11:53:50.853" level="INFO">${conversionCryptoToCurrency} = 592840.0</msg>
+<status status="PASS" starttime="20221129 11:53:50.852" endtime="20221129 11:53:50.853"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
 <arg>${currencyAmount}</arg>
-<arg>0</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<msg timestamp="20221125 12:22:23.821" level="INFO">Argument types are:
-&lt;class 'NoneType'&gt;
-&lt;class 'str'&gt;</msg>
-<msg timestamp="20221125 12:22:23.822" level="FAIL">None != 0</msg>
-<status status="FAIL" starttime="20221125 12:22:23.821" endtime="20221125 12:22:23.823"/>
+<arg>${conversionCryptoToCurrency}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<msg timestamp="20221129 11:53:50.854" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'float'&gt;</msg>
+<status status="PASS" starttime="20221129 11:53:50.853" endtime="20221129 11:53:50.854"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelectorAll('[class="MuiInputBase-input MuiOutlinedInput-input"]')[1].scrollIntoViewIfNeeded()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221129 11:53:50.854" level="INFO">Executing JavaScript:
+document.querySelectorAll('[class="MuiInputBase-input MuiOutlinedInput-input"]')[1].scrollIntoViewIfNeeded()
+Without any arguments.</msg>
+<status status="PASS" starttime="20221129 11:53:50.854" endtime="20221129 11:53:50.861"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 11:53:50.862" level="INFO">Clicking element '//*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]'.</msg>
+<msg timestamp="20221129 11:53:52.225" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221129 11:53:52.226" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (264, 1186)
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55dddd82b2c3 &lt;unknown&gt;
+#1 0x55dddd63483a &lt;unknown&gt;
+#2 0x55dddd6753b4 &lt;unknown&gt;
+#3 0x55dddd672d9c &lt;unknown&gt;
+#4 0x55dddd670384 &lt;unknown&gt;
+#5 0x55dddd66ef36 &lt;unknown&gt;
+#6 0x55dddd662871 &lt;unknown&gt;
+#7 0x55dddd68bf42 &lt;unknown&gt;
+#8 0x55dddd662073 &lt;unknown&gt;
+#9 0x55dddd68c0ae &lt;unknown&gt;
+#10 0x55dddd6a3a50 &lt;unknown&gt;
+#11 0x55dddd68bd63 &lt;unknown&gt;
+#12 0x55dddd6607e3 &lt;unknown&gt;
+#13 0x55dddd661a21 &lt;unknown&gt;
+#14 0x55dddd87918e &lt;unknown&gt;
+#15 0x55dddd87c622 &lt;unknown&gt;
+#16 0x55dddd85faae &lt;unknown&gt;
+#17 0x55dddd87d2a3 &lt;unknown&gt;
+#18 0x55dddd853ecf &lt;unknown&gt;
+#19 0x55dddd89d588 &lt;unknown&gt;
+#20 0x55dddd89d706 &lt;unknown&gt;
+#21 0x55dddd8b78b2 &lt;unknown&gt;
+#22 0x7f2644fbb609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221129 11:53:50.861" endtime="20221129 11:53:52.228"/>
 </kw>
 <doc>To check the conversion from Crypto Amount to Currency Amount and vice versa</doc>
-<status status="FAIL" starttime="20221125 12:22:22.993" endtime="20221125 12:22:23.824">None != 0</status>
+<status status="FAIL" starttime="20221129 11:53:50.361" endtime="20221129 11:53:52.229">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (264, 1186)
+  (Session info: chrome=106.0.5249.119)
+Stacktrace:
+#0 0x55dddd82b2c3 &lt;unknown&gt;
+#1 0x55dddd63483a &lt;unknown&gt;
+#2 0x55dddd6753b4 &lt;unknown&gt;
+#3 0x55dddd672d9c &lt;unknown&gt;
+#4 0x55dddd670384 &lt;unknown&gt;
+#5 0x55dddd66ef36 &lt;unknown&gt;
+#6 0x55dddd662871 &lt;unknown&gt;
+#7 0x55dddd68bf42 &lt;unknown&gt;
+#8 0x55dddd662073 &lt;unknown&gt;
+#9 0x55dddd68c0ae &lt;unknown&gt;
+#10 0x55dddd6a3a50 &lt;unknown&gt;
+#11 0x55dddd68bd63 &lt;unknown&gt;
+#12 0x55dddd6607e3 &lt;unknown&gt;
+#13 0x55dddd661a21 &lt;unknown&gt;
+#14 0x55dddd87918e &lt;unknown&gt;
+#15 0x55dddd87c622 &lt;unknown&gt;
+#16 0x55dddd85faae &lt;unknown&gt;
+#17 0x55dddd87d2a3 &lt;unknown&gt;
+#18 0x55dddd853ecf &lt;unknown&gt;
+#19 0x55dddd89d588 &lt;unknown&gt;
+#20 0x55dddd89d706 &lt;unknown&gt;
+#21 0x55dddd8b78b2 &lt;unknown&gt;
+#22 0x7f2644fbb609 &lt;unknown&gt;
+</status>
 </test>
 <doc>DRCtestcases</doc>
-<status status="FAIL" starttime="20221125 12:22:10.973" endtime="20221125 12:22:23.831"/>
+<status status="FAIL" starttime="20221129 11:53:40.835" endtime="20221129 11:53:52.231"/>
 </suite>
 <statistics>
 <total>
