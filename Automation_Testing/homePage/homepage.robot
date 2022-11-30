@@ -40,7 +40,7 @@ ${coinsHeader}    //*[@class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutt
 
 *** Test Cases ***    
 Open & Verify Kaching.one
-    Open Browser    https://stocgeex.xyz    chrome
+    Open Browser    https://kaching.one    chrome
     Maximize Browser Window
     Click Element    ${letsStartButton}
     Reload Page

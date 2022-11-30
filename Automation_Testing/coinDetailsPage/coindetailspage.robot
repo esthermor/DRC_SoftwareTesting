@@ -36,7 +36,7 @@ ${liquidityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()
 Open & Verify Kaching.one
     Open Browser    https://kaching.one    chrome
     Maximize Browser Window
-    Wait Until Page Contains Element    //*[@class="MuiTypography-root MuiTypography-h2" and text()="Hello Investor!"]    30
+    Wait Until Page Contains Element    //*[@class="MuiTypography-root jss5 MuiTypography-body1" and text()="Hello Investor!"]    30
     Click Element    ${letsStartButton}
 
 Navigate to Coin Details Page (Ethereum)
@@ -140,14 +140,41 @@ Navigate to Coin Details Page (Ethereum)
 #     Should Not Be Equal    ${cryptoAmount}    ${conversionCurrencyToCrypto}    
 #     END
 
-Display "Candlestick" Chart
-    Execute Javascript    window.scrollTo(0,-document.body.scrollHeight)
-    Sleep    1
-    Click Element    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]
-    Page Should Contain Element    //*[@title="Reset Zoom"]
+# Display "Candlestick" Chart
+#     Execute Javascript    window.scrollTo(0,-document.body.scrollHeight)
+#     Sleep    1
+#     Click Element    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]
+#     Page Should Contain Element    //*[@title="Reset Zoom"]
 
-    # Zoom In Icon
-    Get Element Size    //*[@class="apexcharts-candlestick-area"]
+#     # Zoom In Icon
+#     ${sizeBeforeIn}    Get Element Size    //*[@class="apexcharts-candlestick-area"]
+#     Click Element    //*[@class="apexcharts-zoomin-icon"]
+#     ${sizeAfterIn}    Get Element Size     //*[@class="apexcharts-candlestick-area"]
+#     Should Be True    ${sizeBeforeIn} < ${sizeAfterIn}
+       
+#     # Zoom Out Icon
+#     Click Element    //*[@class="apexcharts-zoomout-icon"]
+#     ${sizeAfterOut}    Get Element Size    //*[@class="apexcharts-candlestick-area"]
+#     Should Be True    ${sizeAfterOut} < ${sizeAfterIn}
+
+#     # Reset Zoom Icon
+#     ${originalSize}    Get Value    //*[@class="apexcharts-candlestick-area" and @barWidth]
+#     Log    ${originalSize}
+#     Click Element    //*[@class="apexcharts-reset-icon"]
+#     Wait Until Element Is Visible    //*[@class="apexcharts-reset-icon"]    5
+#     ${sizeReset}    Get Value    //*[@class="apexcharts-candlestick-area" and @barWidth]
+#     Log    ${sizeReset}
+#     Should Be Equal    ${originalSize}    ${sizeReset}
+
+#     # Menu Button
+#     Click Element    //*[@class="apexcharts-menu-icon"]
+#     Page Should Contain Element    //*[@class="apexcharts-menu apexcharts-menu-open"]
+
+Coin Information
+    Page Should Contain Element    //*[@class="MuiButton-label" and text()="Read more"]
+    Sleep    3
+    Click Element    //*[@class="MuiButton-label" and text()="Read more"]
+    Page Should Contain Element    //*[@class="MuiButton-label" and text()="Show less"]
 
 # Coin Page Statistics
 #     Page Should Contain Element    ${communityScore}

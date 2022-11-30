@@ -26,7 +26,7 @@ ${CAD}    //*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMe
 
 *** Test Cases ***
 Open & Verify Kaching.one
-    Open Browser    https://stocgeex.xyz    chrome
+    Open Browser    https://kaching.one    chrome
     Maximize Browser Window
     Click Element    ${letsStartButton}
 
