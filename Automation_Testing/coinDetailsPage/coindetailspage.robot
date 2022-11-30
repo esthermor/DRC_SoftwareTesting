@@ -23,11 +23,14 @@ ${loginSuccess}    //*[@class="MuiAlert-message"]
 
 ${ethereumCoin}    //h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]
 ${chart}    //canvas[@role="img"]
-${ethereumPage}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]
+${ethereumPage}    //*[@class="MuiTypography-root MuiTypography-h3" and text()="Ethereum"]
 
 ${communityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Community Score"]
 ${developerScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Developer Score"]
 ${liquidityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()="Liquidity Score"]
+
+@{validInput}    500    +500    -500    5e10
+@{invalidInput}    +-500    -+500    ++500    --500
 
 *** Test Cases ***
 Open & Verify Kaching.one
@@ -95,21 +98,47 @@ Navigate to Coin Details Page (Ethereum)
 
 # Crypto Converter
 #     [Documentation]    To check the conversion from Crypto Amount to Currency Amount and vice versa
+
+#     FOR    ${value}    IN    @{validInput}
 #     Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
-#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    500
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    CTRL+a\ue003
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    ${value}
 #     ${currencyAmount}    Get Value    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input
 #     ${coinPrice}     Execute Javascript    return (parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=>z.innerText.match(/\\$([0-9,]+(\\.[0-9]+))/))).filter(z=>z)[0]?.[1].replaceAll(',','')??'NaN'))
-#     ${conversionCryptoToCurrency}    Evaluate    500*${coinPrice}
-#     Should Be Equal As Numbers    ${currencyAmount}    ${conversionCryptoToCurrency}
-
+#     ${conversionCryptoToCurrency}    Evaluate    ${value}*${coinPrice}
+#     Should Be Equal As Numbers    ${currencyAmount}    ${conversionCryptoToCurrency}    
+#     END
+        
+#     FOR  ${value}  IN  @{invalidInput}
+#     Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    CTRL+a\ue003
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert crypto amount"]    ${value}
+#     ${currencyAmount}    Get Value    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[3]/div[2]/div/input
+#     ${coinPrice}     Execute Javascript    return (parseFloat(Array.prototype.map.call(document.querySelectorAll("[class='MuiTypography-root MuiTypography-h4']"),(z=>z.innerText.match(/\\$([0-9,]+(\\.[0-9]+))/))).filter(z=>z)[0]?.[1].replaceAll(',','')??'NaN'))
+#     ${conversionCryptoToCurrency}    Evaluate    ${value}*${coinPrice}
+#     Should Not Be Equal   ${currencyAmount}    ${conversionCryptoToCurrency}      
+#     END
+    
 #     Execute Javascript    document.querySelectorAll('[class="MuiInputBase-input MuiOutlinedInput-input"]')[1].scrollIntoViewIfNeeded()
 #     Sleep    2
+
+#     FOR  ${value}  IN  @{validInput}
 #     Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]     
 #     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    CTRL+a\ue003
-#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    500
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    ${value}
 #     ${cryptoAmount}    Get Value    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[1]/div[2]/div/input
-#     ${conversionCurrencyToCrypto}    Evaluate    500/${coinPrice}
-#     Should Be Equal As Numbers    ${cryptoAmount}    ${conversionCurrencyToCrypto}
+#     ${conversionCurrencyToCrypto}    Evaluate    ${value}/${coinPrice}
+#     Should Be Equal As Numbers    ${cryptoAmount}    ${conversionCurrencyToCrypto}    
+#     END
+    
+#     FOR  ${value}  IN  @{invalidInput}
+#     Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]     
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    CTRL+a\ue003
+#     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]//ancestor::div[label="insert currency amount"]    ${value}
+#     ${cryptoAmount}    Get Value    xpath=/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div[1]/div[2]/div/input
+#     ${conversionCurrencyToCrypto}    Evaluate    ${value}/${coinPrice}
+#     Should Not Be Equal    ${cryptoAmount}    ${conversionCurrencyToCrypto}    
+#     END
 
 Display "Candlestick" Chart
     Execute Javascript    window.scrollTo(0,-document.body.scrollHeight)
@@ -117,9 +146,8 @@ Display "Candlestick" Chart
     Click Element    //*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]
     Page Should Contain Element    //*[@title="Reset Zoom"]
 
-# Display "Candlestick" Chart based on selected period
-#     ${endTime}    Execute Javascript    document.querySelectorAll('[class="apexcharts-text apexcharts-xaxis-label "]')[12] 
-#     Get Text    ${endTime} 
+    # Zoom In Icon
+    Get Element Size    //*[@class="apexcharts-candlestick-area"]
 
 # Coin Page Statistics
 #     Page Should Contain Element    ${communityScore}

@@ -1,127 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221129 17:08:46.349" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221130 12:30:58.219" rpa="false" schemaversion="3">
 <suite id="s1" name="Coindetailspage" source="/home/esther/Documents/DRC/QA_Testing/Automation_Testing/coinDetailsPage/coindetailspage.robot">
-<test id="s1-t1" name="Open &amp; Verify Kaching.one" line="33">
+<test id="s1-t1" name="Open &amp; Verify Kaching.one" line="36">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://kaching.one</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221129 17:08:46.534" level="INFO">Opening browser 'chrome' to base url 'https://kaching.one'.</msg>
-<status status="PASS" starttime="20221129 17:08:46.534" endtime="20221129 17:08:48.422"/>
+<msg timestamp="20221130 12:30:58.368" level="INFO">Opening browser 'chrome' to base url 'https://kaching.one'.</msg>
+<status status="PASS" starttime="20221130 12:30:58.367" endtime="20221130 12:31:00.315"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221129 17:08:48.422" endtime="20221129 17:08:48.538"/>
+<status status="PASS" starttime="20221130 12:31:00.316" endtime="20221130 12:31:00.443"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>//*[@class="MuiTypography-root MuiTypography-h2" and text()="Hello Investor!"]</arg>
 <arg>30</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221129 17:08:48.539" endtime="20221129 17:08:48.555"/>
+<status status="PASS" starttime="20221130 12:31:00.444" endtime="20221130 12:31:00.465"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${letsStartButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 17:08:48.556" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
-<status status="PASS" starttime="20221129 17:08:48.555" endtime="20221129 17:08:48.736"/>
+<msg timestamp="20221130 12:31:00.466" level="INFO">Clicking element '//*[@class="MuiButton-label" and contains(text(),"Let's Start!")]'.</msg>
+<status status="PASS" starttime="20221130 12:31:00.465" endtime="20221130 12:31:00.654"/>
 </kw>
-<status status="PASS" starttime="20221129 17:08:46.533" endtime="20221129 17:08:48.737"/>
+<status status="PASS" starttime="20221130 12:30:58.366" endtime="20221130 12:31:00.655"/>
 </test>
-<test id="s1-t2" name="Navigate to Coin Details Page (Ethereum)" line="39">
+<test id="s1-t2" name="Navigate to Coin Details Page (Ethereum)" line="42">
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0,370)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221129 17:08:48.741" level="INFO">Executing JavaScript:
+<msg timestamp="20221130 12:31:00.659" level="INFO">Executing JavaScript:
 window.scrollTo(0,370)
 Without any arguments.</msg>
-<status status="PASS" starttime="20221129 17:08:48.740" endtime="20221129 17:08:48.791"/>
+<status status="PASS" starttime="20221130 12:31:00.658" endtime="20221130 12:31:00.706"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ethereumCoin}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221129 17:08:48.792" endtime="20221129 17:08:49.776"/>
+<msg timestamp="20221130 12:31:11.078" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221130 12:31:11.079" level="FAIL">Element '//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]' not visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20221130 12:31:00.707" endtime="20221130 12:31:11.080"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ethereumCoin}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 17:08:49.776" level="INFO">Clicking element '//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]'.</msg>
-<status status="PASS" starttime="20221129 17:08:49.776" endtime="20221129 17:08:49.869"/>
+<status status="NOT RUN" starttime="20221130 12:31:11.080" endtime="20221130 12:31:11.080"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${chart}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221129 17:08:49.869" endtime="20221129 17:08:50.570"/>
+<status status="NOT RUN" starttime="20221130 12:31:11.081" endtime="20221130 12:31:11.081"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>${ethereumPage}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221129 17:08:50.588" level="INFO">Current page contains element '//*[@class="MuiTypography-root MuiTypography-h4" and text()="Ethereum"]'.</msg>
-<status status="PASS" starttime="20221129 17:08:50.570" endtime="20221129 17:08:50.588"/>
+<status status="NOT RUN" starttime="20221130 12:31:11.081" endtime="20221130 12:31:11.081"/>
 </kw>
-<status status="PASS" starttime="20221129 17:08:48.739" endtime="20221129 17:08:50.588"/>
+<status status="FAIL" starttime="20221130 12:31:00.656" endtime="20221130 12:31:11.082">Element '//h6[@class="MuiTypography-root MuiTypography-h6" and text()="Ethereum"]' not visible after 10 seconds.</status>
 </test>
-<test id="s1-t3" name="Display &quot;Candlestick&quot; Chart" line="114">
+<test id="s1-t3" name="Display &quot;Candlestick&quot; Chart" line="143">
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221129 17:08:50.591" level="INFO">Executing JavaScript:
+<msg timestamp="20221130 12:31:11.084" level="INFO">Executing JavaScript:
 window.scrollTo(0,-document.body.scrollHeight)
 Without any arguments.</msg>
-<status status="PASS" starttime="20221129 17:08:50.590" endtime="20221129 17:08:50.616"/>
+<status status="PASS" starttime="20221130 12:31:11.084" endtime="20221130 12:31:11.092"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221129 17:08:51.617" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20221129 17:08:50.617" endtime="20221129 17:08:51.618"/>
+<msg timestamp="20221130 12:31:12.092" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221130 12:31:11.092" endtime="20221130 12:31:12.093"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 17:08:51.618" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]'.</msg>
-<status status="PASS" starttime="20221129 17:08:51.618" endtime="20221129 17:08:51.854"/>
+<msg timestamp="20221130 12:31:12.093" level="INFO">Clicking element '//*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]'.</msg>
+<msg timestamp="20221130 12:31:12.289" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221130 12:31:12.289" level="FAIL">Element with locator '//*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]' not found.</msg>
+<status status="FAIL" starttime="20221130 12:31:12.093" endtime="20221130 12:31:12.290"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>//*[@title="Reset Zoom"]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221129 17:08:51.901" level="INFO">Current page contains element '//*[@title="Reset Zoom"]'.</msg>
-<status status="PASS" starttime="20221129 17:08:51.854" endtime="20221129 17:08:51.902"/>
+<status status="NOT RUN" starttime="20221130 12:31:12.290" endtime="20221130 12:31:12.290"/>
 </kw>
-<status status="PASS" starttime="20221129 17:08:50.589" endtime="20221129 17:08:51.902"/>
-</test>
-<test id="s1-t4" name="Display &quot;Candlestick&quot; Chart based on selected period" line="120">
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<var>${endTime}</var>
-<arg>document.querySelectorAll('[class="apexcharts-text apexcharts-xaxis-label "]')[12]</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20221129 17:08:51.904" level="INFO">Executing JavaScript:
-document.querySelectorAll('[class="apexcharts-text apexcharts-xaxis-label "]')[12]
-Without any arguments.</msg>
-<msg timestamp="20221129 17:08:51.935" level="INFO">${endTime} = None</msg>
-<status status="PASS" starttime="20221129 17:08:51.904" endtime="20221129 17:08:51.935"/>
+<kw name="Get Element Size" library="SeleniumLibrary">
+<arg>//*[@class="apexcharts-candlestick-area"]</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221130 12:31:12.290" endtime="20221130 12:31:12.290"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<arg>${endTime}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221129 17:08:52.192" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20221129 17:08:52.193" level="FAIL">TypeError: expected string or bytes-like object</msg>
-<status status="FAIL" starttime="20221129 17:08:51.935" endtime="20221129 17:08:52.194"/>
-</kw>
-<status status="FAIL" starttime="20221129 17:08:51.903" endtime="20221129 17:08:52.194">TypeError: expected string or bytes-like object</status>
+<status status="FAIL" starttime="20221130 12:31:11.082" endtime="20221130 12:31:12.291">Element with locator '//*[@class="MuiButtonBase-root MuiButton-root MuiButton-text"]' not found.</status>
 </test>
 <doc>DRCtestcases</doc>
-<status status="FAIL" starttime="20221129 17:08:46.351" endtime="20221129 17:08:52.195"/>
+<status status="FAIL" starttime="20221130 12:30:58.220" endtime="20221130 12:31:12.292"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="1" skip="0" id="s1" name="Coindetailspage">Coindetailspage</stat>
+<stat pass="1" fail="2" skip="0" id="s1" name="Coindetailspage">Coindetailspage</stat>
 </suite>
 </statistics>
 <errors>
