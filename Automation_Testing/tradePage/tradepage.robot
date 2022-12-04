@@ -103,13 +103,14 @@ Buy Bitcoin with Valid Input
     Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]
     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]    CTRL+a\ue003
     Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]    ${buySize}
-    ${brokerFee}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[7].innerText.match(/\\-?([0-9]+(.[0-9]+))/)))
-    ${price}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[5].innerText.match(/\\-?([0-9]+(.[0-9]+))/)))
+    ${brokerFee}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[7].innerText.match(/\\-?([0-9]+(\\.[0-9]+)?)/)))
+    ${price}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[5].innerText.match(/\\-?([0-9]+(\\.[0-9]+)?)/)))
     
     ${brokerFeeConversion}    Evaluate    (0.1/100)*${price}
-    Should Be Equal    ${brokerFee}    ${brokerFeeConversion}
+    ${test}    Execute Javascript    return (parseFloat(${brokerFeeConversion}.toFixed(2)))
+    Should Be Equal    ${brokerFee}    ${test}
 
-    ${totalCostValue}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[9].innerText.match(/\\-?([0-9]+(.[0-9]+))/)))
+    ${totalCostValue}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[9].innerText.match(/\\-?([0-9]+(\\.[0-9]+)?)/)))
     ${totalCost}    Evaluate    ${brokerFee}+${price}
     Should Be Equal    ${totalCostValue}    ${totalCost}
     END
@@ -124,5 +125,31 @@ Buy Bitcoin with Invalid Input
     Page Should Contain Element    //*[@class="MuiAlert-message" and text()="invalid price"]    
     END
     
+Sell Bitcoin with Valid Input
+    FOR  ${sellSize}  IN  @{validValue}
+    Click Element    //*[@class="MuiButton-label" and text()="Sell"]
+    Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]
+    Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]    CTRL+a\ue003
+    Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]    ${sellSize}
+    ${brokerFee}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[7].innerText.match(/\\-?([0-9]+(\\.[0-9]+)?)/)))
+    ${profit}    Execute Javascript    return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[5].innerText.match(/\\-?([0-9]+(\\.[0-9]+)?)/)))
 
-  
+    ${brokerFeeConversion}    Evaluate    (0.1/100)*${profit}
+    ${calculatedBrokerFee}    Execute Javascript    return (parseFloat(${brokerFeeConversion}.toFixed(2)))
+    Should Be Equal    ${brokerFee}    ${calculatedBrokerFee}
+
+    ${totalGainValue}    Execute Javascript        return (parseFloat(document.querySelectorAll('[class="MuiTypography-root MuiTypography-body1"]')[9].innerText.match(/\\-?([0-9]+(\\.[0-9]+)?)/)))
+    ${totalGain}    Evaluate    ${profit}-${brokerFee}
+    ${calculatedTotalGain}    Execute Javascript    return (parseFloat(${totalGain}.toFixed(2)))
+    Should Be Equal    ${totalGainValue}    ${calculatedTotalGain}    
+    END
+    
+Sell Bitcoin with Invalid Input
+    FOR  ${sellSize}  IN  @{invalidValue}
+    Click Element    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]
+    Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]    CTRL+a\ue003
+    Press Keys    //*[@class="MuiInputBase-input MuiOutlinedInput-input"]    ${sellSize}
+    Click Element    //*[@class="MuiButton-label" and text()="Submit"]
+    Wait Until Page Contains Element    //*[@class="MuiAlert-message"]    5
+    Page Should Contain Element    //*[@class="MuiAlert-message" and text()="invalid price"]    
+    END
