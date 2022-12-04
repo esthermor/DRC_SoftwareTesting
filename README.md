@@ -23,5 +23,7 @@ In package.json, add portion: <br />
 ```
 
 ### Run test
-
+#### API Testing
 Run test with `npm test`
+#### Automation Testing
+Run test with `robot <filename.robot>`
