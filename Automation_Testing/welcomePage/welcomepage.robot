@@ -7,7 +7,7 @@ ${letsStartButton}    //*[@class="MuiButton-label" and contains(text(),"Let's St
 
 *** Test Cases ***
 Open & Verify Kaching.one
-    Open Browser    https://stocgeex.xyz    chrome
+    Open Browser    https://kaching.one    chrome
     Maximize Browser Window
 
 Refresh Welcome Page

@@ -26,7 +26,7 @@ Login
     # Enter email
     Click Button    ${loginHeaderButton}
     Click Element    ${emailLoginTextfield}
-    Input Text    ${emailLoginTextfield}    Esther@gmail.com
+    Input Text    ${emailLoginTextfield}    Testing_123@gmail.com
 
     # Enter password
     Click Element    ${passwordLoginTextfield}
@@ -62,7 +62,7 @@ Sign Up
 
 *** Test Cases ***
 Open & Verify Kaching.one
-    Open Browser    https://stocgeex.xyz    chrome
+    Open Browser    https://kaching.one    chrome
     Maximize Browser Window
     Wait Until Page Contains Element    //*[@class="MuiTypography-root jss5 MuiTypography-body1" and text()="Hello Investor!"]    30
     Click Element    ${letsStartButton}
@@ -75,7 +75,6 @@ Trade for user (not logged in)
 Trade New User
     Run Keyword    Login
     Wait Until Page Contains Element    //*[@class="MuiButton-label" and text()="Start Trading"]    10
-    # Page Should Contain Element    //*[@class="MuiButton-label" and text()="Start Trading"]
     Click Element    //*[@class="MuiButton-label" and text()="Start Trading"]
 
 Wallet Balance (New User)

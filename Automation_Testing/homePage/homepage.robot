@@ -102,7 +102,7 @@ Sign Up User
 
     # Enter email
     Click Element    ${emailSignUpTextfield}    
-    Input Text    ${emailSignUpTextfield}    Esther@gmail.com
+    Input Text    ${emailSignUpTextfield}    Tester@gmail.com
 
     # Enter Password
     Click Element    ${passwordSignUpTextfield}
@@ -128,7 +128,7 @@ Login to kaching.one
     # Enter email
     Click Button    ${loginHeaderButton}
     Click Element    ${emailLoginTextfield}
-    Input Text    ${emailLoginTextfield}    Esther@gmail.com
+    Input Text    ${emailLoginTextfield}    Testing_123@gmail.com
 
     # Enter password
     Click Element    ${passwordLoginTextfield}
@@ -146,8 +146,6 @@ Login to kaching.one
     #Sign Up Link
     Click Element      ${signUpLink}
     Page Should Contain Element    //h1[text()=" Create Account"]
-
-    # Press Keys    None    ESC        
    
 Navigation to Coin Page 
     Click Element    ${coinsHeader}

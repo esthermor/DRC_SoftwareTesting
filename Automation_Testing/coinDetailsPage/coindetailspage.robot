@@ -34,7 +34,7 @@ ${liquidityScore}    //*[@class="MuiTypography-root MuiTypography-h4" and text()
 
 *** Test Cases ***
 Open & Verify Kaching.one
-    Open Browser    https://stocgeex.xyz    chrome
+    Open Browser    https://kaching.one    chrome
     Maximize Browser Window
     Wait Until Page Contains Element    //*[@class="MuiTypography-root jss5 MuiTypography-body1" and text()="Hello Investor!"]    30
     Click Element    ${letsStartButton}
