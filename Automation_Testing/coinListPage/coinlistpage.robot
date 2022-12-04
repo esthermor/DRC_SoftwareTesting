@@ -26,7 +26,7 @@ ${CAD}    //*[@class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMe
 
 *** Test Cases ***
 Open & Verify Kaching.one
-    Open Browser    https://stocgeex.xyz    chrome
+    Open Browser    https://kaching.one    chrome
     Maximize Browser Window
     Click Element    ${letsStartButton}
 
@@ -91,7 +91,7 @@ Search Invalid Coin
 Search Valid Coins
     FOR    ${coinID}    IN    @{coinID}
     Click Element    ${searchBox}
-    Press Keys    ${searchBox}    CTRL+a/ue003
+    Press Keys    ${searchBox}    CTRL+a\ue003
     Input Text    ${searchBox}    ${coinID}
     Page Should Contain Element    //*[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"]//h6[text()="${coinID}"]
 
