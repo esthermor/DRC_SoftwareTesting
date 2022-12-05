@@ -26,4 +26,4 @@ In package.json, add portion: <br />
 #### API Testing
 Run test with `npm test`
 #### Automation Testing
-Run test with `robot <filename.robot>`
+Run test with Robotframework: `robot <filename.robot>`
